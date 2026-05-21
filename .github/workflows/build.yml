@@ -242,7 +242,7 @@ jobs:
           R2_BUCKET: ${{ secrets.R2_BUCKET_NAME }}
           R2_ENDPOINT: ${{ secrets.R2_ENDPOINT_URL }}
         run: |
-          aws s3 cp dynamic-web.zip s3://$R2_BUCKET/solian/dynamic-web.zip --endpoint-url $R2_ENDPOINT
+          aws s3 cp dynamic-web.zip s3://$R2_BUCKET/dynamic/dynamic-web.zip --endpoint-url $R2_ENDPOINT
 
       - name: R2 Upload Windows
         if: matrix.platform == 'windows'
@@ -255,10 +255,10 @@ jobs:
           R2_ENDPOINT: ${{ secrets.R2_ENDPOINT_URL }}
         run: |
           if [ -f "Installer/dynamic-windows-x64-setup.exe" ]; then
-            aws s3 cp Installer/dynamic-windows-x64-setup.exe s3://$R2_BUCKET/solian/dynamic-windows-x64-setup.exe --endpoint-url $R2_ENDPOINT
+            aws s3 cp Installer/dynamic-windows-x64-setup.exe s3://$R2_BUCKET/dynamic/dynamic-windows-x64-setup.exe --endpoint-url $R2_ENDPOINT
           fi
           if [ -f "dynamic-windows-portable.zip" ]; then
-            aws s3 cp dynamic-windows-portable.zip s3://$R2_BUCKET/solian/dynamic-windows-portable.zip --endpoint-url $R2_ENDPOINT
+            aws s3 cp dynamic-windows-portable.zip s3://$R2_BUCKET/dynamic/dynamic-windows-portable.zip --endpoint-url $R2_ENDPOINT
           fi
 
       - name: R2 Upload Linux
@@ -271,8 +271,8 @@ jobs:
           R2_BUCKET: ${{ secrets.R2_BUCKET_NAME }}
           R2_ENDPOINT: ${{ secrets.R2_ENDPOINT_URL }}
         run: |
-          [ -f "Dynamic.AppImage" ] && aws s3 cp Dynamic.AppImage s3://$R2_BUCKET/solian/Dynamic.AppImage --endpoint-url $R2_ENDPOINT
-          [ -f "dynamic-linux-bundle.zip" ] && aws s3 cp dynamic-linux-bundle.zip s3://$R2_BUCKET/solian/dynamic-linux-bundle.zip --endpoint-url $R2_ENDPOINT
+          [ -f "Dynamic.AppImage" ] && aws s3 cp Dynamic.AppImage s3://$R2_BUCKET/dynamic/Dynamic.AppImage --endpoint-url $R2_ENDPOINT
+          [ -f "dynamic-linux-bundle.zip" ] && aws s3 cp dynamic-linux-bundle.zip s3://$R2_BUCKET/dynamic/dynamic-linux-bundle.zip --endpoint-url $R2_ENDPOINT
 
       - name: R2 Upload Android
         if: matrix.platform == 'android'
@@ -284,6 +284,6 @@ jobs:
           R2_BUCKET: ${{ secrets.R2_BUCKET_NAME }}
           R2_ENDPOINT: ${{ secrets.R2_ENDPOINT_URL }}
         run: |
-          aws s3 cp build/app/outputs/flutter-apk/app-arm64-v8a-release.apk s3://$R2_BUCKET/solian/dynamic-arm64-v8a.apk --endpoint-url $R2_ENDPOINT
-          aws s3 cp build/app/outputs/flutter-apk/app-armeabi-v7a-release.apk s3://$R2_BUCKET/solian/dynamic-armeabi-v7a.apk --endpoint-url $R2_ENDPOINT
-          aws s3 cp build/app/outputs/flutter-apk/app-x86_64-release.apk s3://$R2_BUCKET/solian/dynamic-x86_64.apk --endpoint-url $R2_ENDPOINT
+          aws s3 cp build/app/outputs/flutter-apk/app-arm64-v8a-release.apk s3://$R2_BUCKET/dynamic/dynamic-arm64-v8a.apk --endpoint-url $R2_ENDPOINT
+          aws s3 cp build/app/outputs/flutter-apk/app-armeabi-v7a-release.apk s3://$R2_BUCKET/dynamic/dynamic-armeabi-v7a.apk --endpoint-url $R2_ENDPOINT
+          aws s3 cp build/app/outputs/flutter-apk/app-x86_64-release.apk s3://$R2_BUCKET/dynamic/dynamic-x86_64.apk --endpoint-url $R2_ENDPOINT
