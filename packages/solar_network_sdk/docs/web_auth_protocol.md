@@ -1,9 +1,9 @@
-# Web Auth Protocol (solian://auth/web)
+# Web Auth Protocol (dynamic://auth/web)
 
 This document describes the native APP_CONNECT-compatible web auth trigger
 handled by Solian via deep link protocol:
 
-- `solian://auth/web`
+- `dynamic://auth/web`
 
 It is designed for native apps (for example iOS/Android custom URI schemes)
 that need challenge and token exchange through the Solian app.
@@ -22,7 +22,7 @@ Both calls require `redirect_uri` so Solian can return result data to your app.
 Use this URL format:
 
 ```text
-solian://auth/web?app=<app_slug>&redirect_uri=<encoded_redirect_uri>&state=<optional_state>
+dynamic://auth/web?app=<app_slug>&redirect_uri=<encoded_redirect_uri>&state=<optional_state>
 ```
 
 Parameters:
@@ -54,7 +54,7 @@ Error callback:
 After your app signs the challenge with APP_CONNECT secret, use:
 
 ```text
-solian://auth/web?signed_challenge=<signature>&redirect_uri=<encoded_redirect_uri>&secret_id=<optional_secret_id>&state=<optional_state>
+dynamic://auth/web?signed_challenge=<signature>&redirect_uri=<encoded_redirect_uri>&secret_id=<optional_secret_id>&state=<optional_state>
 ```
 
 Parameters:
@@ -83,7 +83,7 @@ Error callback:
 - `getProtocolChallengeUrl({ appSlug, redirectUri, state })`
 - `getProtocolExchangeUrl({ signedChallenge, redirectUri, secretId, state })`
 
-These produce properly encoded `solian://auth/web` URLs.
+These produce properly encoded `dynamic://auth/web` URLs.
 
 ## Notes
 

@@ -20,8 +20,8 @@ class NotificationCard extends HookConsumerWidget {
       onTap: () {
         if (notification.meta['action_uri'] != null) {
           var uri = notification.meta['action_uri'] as String;
-          if (uri.startsWith('solian://')) {
-            uri = uri.replaceFirst('solian://', '');
+          if (uri.startsWith('dynamic://')) {
+            uri = uri.replaceFirst('dynamic://', '');
           }
           if (uri.startsWith('/')) {
             // In-app routes

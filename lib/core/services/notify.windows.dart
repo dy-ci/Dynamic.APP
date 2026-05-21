@@ -153,7 +153,7 @@ StreamSubscription<WebSocketPacket> setupNotificationListener(
             group: notification.topic,
             image: imagePath,
             largeImage: largeImagePath,
-            launch: actionUrl != null ? 'solian://$actionUrl' : null,
+            launch: actionUrl != null ? 'dynamic://$actionUrl' : null,
           );
           await windowsNotification!.showNotificationPluginTemplate(
             notificationMessage,

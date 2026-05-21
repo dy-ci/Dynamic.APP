@@ -224,7 +224,7 @@ struct PostShuffleWidgetEntryView: View {
     
     @ViewBuilder
     private func PostContentView(post: SnPost) -> some View {
-        Link(destination: URL(string: "solian://posts/\(post.id)")!) {
+        Link(destination: URL(string: "dynamic://posts/\(post.id)")!) {
             VStack(alignment: .leading, spacing: 8) {
                 HStack(alignment: .top, spacing: 8) {
                     if let avatarUrl = post.publisher.picture?.url ?? post.publisher.picture?.thumbnail {
@@ -327,7 +327,7 @@ struct PostShuffleWidgetEntryView: View {
     
     @ViewBuilder
     private func EmptyView() -> some View {
-        Link(destination: URL(string: "solian://posts/shuffle")!) {
+        Link(destination: URL(string: "dynamic://posts/shuffle")!) {
             VStack(alignment: .leading, spacing: 8) {
                 HStack(spacing: 6) {
                     Image(systemName: "text.alignleft")
@@ -370,7 +370,7 @@ struct PostShuffleWidgetEntryView: View {
     
     @ViewBuilder
     private func ErrorView(error: String) -> some View {
-        Link(destination: URL(string: "solian://posts/shuffle")!) {
+        Link(destination: URL(string: "dynamic://posts/shuffle")!) {
             VStack(alignment: .leading, spacing: 8) {
                 HStack(spacing: 6) {
                     Image(systemName: "exclamationmark.triangle")

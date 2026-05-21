@@ -826,7 +826,7 @@ class CreateAccountContent extends HookConsumerWidget {
           Uri.parse('$serverUrl/padlock/auth/login/${provider.toLowerCase()}')
               .replace(
                 queryParameters: {
-                  'returnUrl': 'solian://auth/callback',
+                  'returnUrl': 'dynamic://auth/callback',
                   'deviceId': deviceId,
                   'flow': 'login',
                 },

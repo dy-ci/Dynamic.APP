@@ -208,13 +208,13 @@ class _LoginCheckScreen extends HookConsumerWidget {
         }
 
         // Extract tag ID from the deep link
-        // Format: solian://phpass/{tag_id} or solian://?uid=...&...
+        // Format: dynamic://phpass/{tag_id} or dynamic://?uid=...&...
         String? tagId;
         if (uri.host == 'phpass' && uri.pathSegments.isNotEmpty) {
-          // Path-based format: solian://phpass/{tag_id}
+          // Path-based format: dynamic://phpass/{tag_id}
           tagId = uri.pathSegments.first;
         } else {
-          // Query-based format: solian://?uid=...
+          // Query-based format: dynamic://?uid=...
           tagId = uri.queryParameters['uid'];
         }
 
@@ -956,7 +956,7 @@ class _LoginLookupScreen extends HookConsumerWidget {
       final token = ref.watch(tokenProvider);
       final deviceId = await getUdid();
       final queryParams = <String, String>{
-        'returnUrl': 'solian://auth/callback',
+        'returnUrl': 'dynamic://auth/callback',
         'deviceId': deviceId,
         'flow': 'login',
       };

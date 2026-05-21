@@ -25,58 +25,58 @@ final class DeepLinkHandler {
         switch host {
         case "chat":
             if let channelId = url.pathComponents.count > 1 ? url.pathComponents[1] : nil {
-                openUrl("solian://chat/\(channelId)")
+                openUrl("dynamic://chat/\(channelId)")
                 return true
             }
 
         case "posts":
             if let postId = url.pathComponents.count > 1 ? url.pathComponents[1] : nil {
-                openUrl("solian://posts/\(postId)")
+                openUrl("dynamic://posts/\(postId)")
                 return true
             }
 
         case "search":
             if let query = queryItems?.first(where: { $0.name == "query" })?.value {
                 let encodedQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? query
-                openUrl("solian://search?q=\(encodedQuery)")
+                openUrl("dynamic://search?q=\(encodedQuery)")
                 return true
             }
 
         case "notifications":
-            openUrl("solian://notifications")
+            openUrl("dynamic://notifications")
             return true
 
         case "compose":
-            openUrl("solian://compose")
+            openUrl("dynamic://compose")
             return true
 
         default:
             if path.hasPrefix("/chat/") {
                 let channelId = path.replacingOccurrences(of: "/chat/", with: "")
-                openUrl("solian://chat/\(channelId)")
+                openUrl("dynamic://chat/\(channelId)")
                 return true
             }
             if path.hasPrefix("/posts/") {
                 let postId = path.replacingOccurrences(of: "/posts/", with: "")
-                openUrl("solian://posts/\(postId)")
+                openUrl("dynamic://posts/\(postId)")
                 return true
             }
             if path.hasPrefix("/search") {
                 let query = queryItems?.first(where: { $0.name == "q" })?.value ?? ""
                 let encodedQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? query
-                openUrl("solian://search?q=\(encodedQuery)")
+                openUrl("dynamic://search?q=\(encodedQuery)")
                 return true
             }
             if path == "/notifications" {
-                openUrl("solian://notifications")
+                openUrl("dynamic://notifications")
                 return true
             }
             if path.hasPrefix("/compose") || path == "/compose" {
-                openUrl("solian://compose")
+                openUrl("dynamic://compose")
                 return true
             }
             if path.hasPrefix("/dashboard") {
-                openUrl("solian://dashboard")
+                openUrl("dynamic://dashboard")
                 return true
             }
         }

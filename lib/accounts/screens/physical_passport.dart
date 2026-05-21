@@ -709,7 +709,7 @@ class _AddPhysicalPassportSheetState
 
       await FlutterNfcKit.poll(iosAlertMessage: 'nfcTapToWrite'.tr());
 
-      final deepLink = 'solian://phpass/${passport.id}';
+      final deepLink = 'dynamic://phpass/${passport.id}';
       final uriRecord = ndef.UriRecord.fromUri(Uri.parse(deepLink));
       await FlutterNfcKit.writeNDEFRecords([uriRecord]);
 
@@ -889,7 +889,7 @@ class _PhysicalPassportScanSheetState
       SnScanResult? result;
 
       // Check if URI has a path segment (unencrypted tag with entry ID)
-      // e.g., solian://phpass/{tag_id}
+      // e.g., dynamic://phpass/{tag_id}
       if (uri.host == 'phpass' && uri.pathSegments.isNotEmpty) {
         final tagId = uri.pathSegments.first;
         final response = await client.dio.get('/passport/nfc/tags/$tagId');
@@ -1384,7 +1384,7 @@ class _PhysicalPassportDetailSheetState
 
       await FlutterNfcKit.poll(iosAlertMessage: 'nfcTapToWrite'.tr());
 
-      final deepLink = 'solian://phpass/${widget.passport.id}';
+      final deepLink = 'dynamic://phpass/${widget.passport.id}';
       final uriRecord = ndef.UriRecord.fromUri(Uri.parse(deepLink));
       await FlutterNfcKit.writeNDEFRecords([uriRecord]);
 

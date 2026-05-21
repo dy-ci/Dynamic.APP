@@ -108,7 +108,7 @@ class SharingIntentService {
     String? solianDeepLink;
     for (final url in links) {
       final normalized = url.trim();
-      if (normalized.toLowerCase().startsWith('solian://')) {
+      if (normalized.toLowerCase().startsWith('dynamic://')) {
         solianDeepLink = normalized;
         break;
       }

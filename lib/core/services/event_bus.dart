@@ -122,7 +122,7 @@ class ShowThoughtSheetEvent {
   });
 }
 
-/// Event fired when a custom solian:// deep link is received on platforms
+/// Event fired when a custom dynamic:// deep link is received on platforms
 /// that deliver it via sharing intents.
 class SolianDeepLinkEvent {
   final Uri uri;

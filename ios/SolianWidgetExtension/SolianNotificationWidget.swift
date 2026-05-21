@@ -303,7 +303,7 @@ struct NotificationWidgetEntryView: View {
     
     @ViewBuilder
     private func HasNotificationsView(notifications: [SnNotification], unreadCount: Int) -> some View {
-        Link(destination: URL(string: "solian://notifications")!) {
+        Link(destination: URL(string: "dynamic://notifications")!) {
             if isCompact {
                 if isAccessory {
                     if isCircular {
@@ -527,7 +527,7 @@ struct NotificationWidgetEntryView: View {
     
     @ViewBuilder
     private func EmptyView() -> some View {
-        Link(destination: URL(string: "solian://notifications")!) {
+        Link(destination: URL(string: "dynamic://notifications")!) {
             if isCircular {
                 ZStack {
                     Image(systemName: "bell")
@@ -587,7 +587,7 @@ struct NotificationWidgetEntryView: View {
     
     @ViewBuilder
     private func ErrorView(error: String) -> some View {
-        Link(destination: URL(string: "solian://notifications")!) {
+        Link(destination: URL(string: "dynamic://notifications")!) {
             if isCircular {
                 ZStack {
                     Image(systemName: "exclamationmark.triangle")

@@ -53,9 +53,9 @@ final result = await WebAuthClient(
 ).waitForAuth();
 ```
 
-### Native App Connect (solian://)
+### Native App Connect (dynamic://)
 
-For native apps (iOS/Android), you can use the `solian://auth/web` protocol
+For native apps (iOS/Android), you can use the `dynamic://auth/web` protocol
 to request a challenge and exchange a signed challenge with redirect callbacks.
 
 ```dart

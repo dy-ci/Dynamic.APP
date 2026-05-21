@@ -745,7 +745,7 @@ class ComposeLogic {
       return;
     }
     final cloudFile = attachment.data as SnCloudFile;
-    final markdown = '![${cloudFile.name}](solian://files/${cloudFile.id})';
+    final markdown = '![${cloudFile.name}](dynamic://files/${cloudFile.id})';
     final controller = state.contentController;
     final text = controller.text;
     final selection = controller.selection;

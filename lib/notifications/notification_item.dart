@@ -29,8 +29,8 @@ class NotificationItemWidget extends HookConsumerWidget {
       onTap: () {
         if (item.notification.meta['action_uri'] != null) {
           var uri = item.notification.meta['action_uri'] as String;
-          if (uri.startsWith('solian://')) {
-            uri = uri.replaceFirst('solian://', '');
+          if (uri.startsWith('dynamic://')) {
+            uri = uri.replaceFirst('dynamic://', '');
           }
           if (uri.startsWith('/')) {
             ref

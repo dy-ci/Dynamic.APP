@@ -333,7 +333,7 @@ struct CheckInWidgetEntryView: View {
     
     @ViewBuilder
     private func CheckedInView(result: CheckInResult, notableDay: NotableDay?) -> some View {
-        Link(destination: URL(string: "solian://dashboard")!) {
+        Link(destination: URL(string: "dynamic://dashboard")!) {
             VStack(alignment: .leading, spacing: isAccessory ? 2 : 8) {
                 HStack(spacing: 8) {
                     Image(systemName: "flame.fill")
@@ -489,7 +489,7 @@ struct CheckInWidgetEntryView: View {
     
     @ViewBuilder
     private func NotCheckedInView(notableDay: NotableDay?) -> some View {
-        Link(destination: URL(string: "solian://dashboard")!) {
+        Link(destination: URL(string: "dynamic://dashboard")!) {
             VStack(alignment: .leading, spacing: isAccessory ? 2 : 8) {
                 HStack(spacing: 8) {
                     Image(systemName: "flame.fill")
@@ -543,7 +543,7 @@ struct CheckInWidgetEntryView: View {
     
     @ViewBuilder
     private func ErrorView(error: String) -> some View {
-        Link(destination: URL(string: "solian://dashboard")!) {
+        Link(destination: URL(string: "dynamic://dashboard")!) {
             VStack(alignment: .leading, spacing: isAccessory ? 2 : 8) {
                 HStack(spacing: 4) {
                     Image(systemName: "exclamationmark.triangle")

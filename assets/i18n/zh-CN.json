@@ -2487,7 +2487,7 @@
   "meetScanStageHostHint": "保持页面开启，对方扫码后其名片将显示在这里。",
   "meetScanStageGuestHint": "扫描二维码，与对方一起进入会面记录。",
   "meetScanPrompt": "扫描此二维码",
-  "meetScanHint": "该二维码包含 solian://meets/... 链接，可直接打开会面。",
+  "meetScanHint": "该二维码包含 dynamic://meets/... 链接，可直接打开会面。",
   "meetScanCameraPrompt": "对准二维码",
   "meetScanCameraHint": "将相机对准 Dynamic 会面二维码即可自动打开。",
   "meetScanJoinedTitle": "新名片已加入",

@@ -18,7 +18,7 @@ class CaptchaScreenContent extends ConsumerWidget {
         titleText: "Anti-Robot",
         child: InAppWebView(
           initialUrlRequest: URLRequest(
-            url: WebUri('${captchaUrl.value}?redirect_uri=solian://captcha'),
+            url: WebUri('${captchaUrl.value}?redirect_uri=dynamic://captcha'),
           ),
           shouldOverrideUrlLoading: (controller, navigationAction) async {
             Uri? url = navigationAction.request.url;

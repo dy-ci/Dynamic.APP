@@ -231,10 +231,10 @@ struct OpenChatIntent: AppIntent {
 
     func perform() async throws -> some IntentResult & OpensIntent {
         if let chatRoom = chatRoom {
-            DeepLinkHandler.shared.handle(url: URL(string: "solian://chat/\(chatRoom.id)")!)
+            DeepLinkHandler.shared.handle(url: URL(string: "dynamic://chat/\(chatRoom.id)")!)
             return .result(value: "Opening chat \(chatRoom.name ?? chatRoom.id)")
         } else {
-            DeepLinkHandler.shared.handle(url: URL(string: "solian://chat")!)
+            DeepLinkHandler.shared.handle(url: URL(string: "dynamic://chat")!)
             return .result(value: "Opening chat list")
         }
     }
@@ -261,7 +261,7 @@ struct OpenPostIntent: AppIntent {
             throw AppIntentError.requiredParameter("Post")
         }
 
-        DeepLinkHandler.shared.handle(url: URL(string: "solian://posts/\(post.id)")!)
+        DeepLinkHandler.shared.handle(url: URL(string: "dynamic://posts/\(post.id)")!)
 
         return .result(value: "Opening post \(post.id)")
     }
@@ -277,7 +277,7 @@ struct OpenComposeIntent: AppIntent {
     static var openAppWhenRun = true
 
     func perform() async throws -> some IntentResult & OpensIntent {
-        DeepLinkHandler.shared.handle(url: URL(string: "solian://compose")!)
+        DeepLinkHandler.shared.handle(url: URL(string: "dynamic://compose")!)
 
         return .result(value: "Opening compose screen")
     }
@@ -293,7 +293,7 @@ struct ComposePostIntent: AppIntent {
     static var openAppWhenRun = true
 
     func perform() async throws -> some IntentResult & OpensIntent {
-        DeepLinkHandler.shared.handle(url: URL(string: "solian://compose")!)
+        DeepLinkHandler.shared.handle(url: URL(string: "dynamic://compose")!)
 
         return .result(value: "Opening compose screen")
     }
@@ -321,7 +321,7 @@ struct SearchContentIntent: AppIntent {
         }
 
         let encodedQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? query
-        DeepLinkHandler.shared.handle(url: URL(string: "solian://search?q=\(encodedQuery)")!)
+        DeepLinkHandler.shared.handle(url: URL(string: "dynamic://search?q=\(encodedQuery)")!)
 
         return .result(value: "Searching for \"\(query)\"")
     }
@@ -337,7 +337,7 @@ struct ViewNotificationsIntent: AppIntent {
     static var openAppWhenRun = true
 
     func perform() async throws -> some IntentResult & OpensIntent {
-        DeepLinkHandler.shared.handle(url: URL(string: "solian://notifications")!)
+        DeepLinkHandler.shared.handle(url: URL(string: "dynamic://notifications")!)
 
         return .result(value: "Opening notifications")
     }
