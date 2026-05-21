@@ -1,144 +1,289 @@
 name: Build Release
-
 on:
   push:
     tags:
       - "*"
   workflow_dispatch:
 
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 jobs:
-  build-web:
-    runs-on: ubuntu-latest
+  build:
+    name: ${{ matrix.platform }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        platform:
+          - web
+          - windows
+          - linux
+          - android
+        include:
+          - platform: web
+            os: ubuntu-latest
+          - platform: windows
+            os: windows-latest
+          - platform: linux
+            os: ubuntu-latest
+          - platform: android
+            os: ubuntu-latest
+
     steps:
       - name: Clone repository
         uses: actions/checkout@v4
+
+      - name: Setup JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: temurin
+
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
+          flutter-version: 3.41.7
           channel: stable
           cache: true
-      - run: flutter pub get
-      - run: flutter build web --release
-      - name: Archive production artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: build-output-web
-          path: build/web
-  build-exe:
-    runs-on: windows-latest
-    steps:
-      - name: Clone repository
-        uses: actions/checkout@v4
-      - name: Set up Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          channel: stable
-          cache: true
-      - run: flutter pub get
-      - run: flutter build windows
-      - name: Extract Version
-        id: extract_version
+
+      - name: Install Linux Dependencies
+        if: matrix.platform == 'linux'
         run: |
-           $pubspec = Get-Content pubspec.yaml -Raw
-           if ($pubspec -match 'version:\s*(\d+\.\d+\.\d+)\+(\d+)') {
-             $appVersion = $matches[1]
-             $buildNumber = $matches[2]
-             Write-Host "app_version=$appVersion" >> $env:GITHUB_OUTPUT
-             Write-Host "build_number=$buildNumber" >> $env:GITHUB_OUTPUT
-           }
-      - name: Archive production artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: build-output-windows
-          path: build/windows/x64/runner/Release
-      - name: Compile Installer
+          sudo apt-get update -y
+          sudo apt-get install -y ninja-build libgtk-3-dev libmpv-dev mpv libayatana-appindicator3-dev keybinder-3.0 libnotify-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev gstreamer-1.0 libsecret-1-dev zip curl unzip
+
+      - name: Accept Android SDK Licenses & NDK
+        if: matrix.platform == 'android'
+        run: |
+          export ANDROID_SDK_ROOT=/usr/local/lib/android/sdk
+          yes | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --licenses
+          $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager "ndk;29.0.13113456"
+
+      - name: Restore Android Signing Files
+        if: matrix.platform == 'android'
+        run: |
+          echo "${{ secrets.ANDROID_KEY_PROPS }}" > android/key.properties
+          mkdir -p android/app/keystore
+          echo "${{ secrets.ANDROID_DC_JKS_BASE64 }}" | base64 -d > android/app/keystore/dc.jks
+
+      - name: Install Dependencies
+        run: flutter pub get
+
+      - name: Build Web Release
+        if: matrix.platform == 'web'
+        run: flutter build web --release
+
+      - name: Build Windows Release
+        if: matrix.platform == 'windows'
+        run: flutter build windows --release
+
+      - name: Build Linux Release
+        if: matrix.platform == 'linux'
+        run: flutter build linux --no-tree-shake-icons --release
+
+      - name: Build Android Release
+        if: matrix.platform == 'android'
+        run: flutter build apk --release --split-per-abi
+
+      - name: Extract Version
+        if: matrix.platform == 'windows'
+        id: extract_version
+        shell: powershell
+        run: |
+          $pub = Get-Content pubspec.yaml -Raw
+          if($pub -match 'version:\s*(\d+\.\d+\.\d+)\+(\d+)'){
+            Write-Host "app_version=$($matches[1])" >> $env:GITHUB_OUTPUT
+            Write-Host "build_number=$($matches[2])" >> $env:GITHUB_OUTPUT
+          }
+
+      - name: Build Windows Installer
+        if: matrix.platform == 'windows'
         uses: Minionguyjpro/Inno-Setup-Action@v1.2.2
         with:
           path: setup.iss
           options: "/DAppVersion=${{ steps.extract_version.outputs.app_version }} /DBuildNumber=${{ steps.extract_version.outputs.build_number }}"
-      - name: Archive installer artifacts
+
+      - name: Locate Windows Installer
+        if: matrix.platform == 'windows'
+        id: locate_installer
+        shell: bash
+        run: |
+          mkdir -p Installer
+          found_exe=""
+          if [ -f "Output/dynamic-windows-x64-setup.exe" ]; then
+            found_exe="Output/dynamic-windows-x64-setup.exe"
+          elif [ -f "Output/Setup.exe" ]; then
+            found_exe="Output/Setup.exe"
+          elif [ -f "Installer/dynamic-windows-x64-setup.exe" ]; then
+            found_exe="Installer/dynamic-windows-x64-setup.exe"
+          else
+            possible_exe=$(find . -name "*.exe" -type f -mmin -5 | head -1)
+            if [ -n "$possible_exe" ]; then
+              found_exe="$possible_exe"
+            fi
+          fi
+          if [ -n "$found_exe" ]; then
+            echo "found_exe=$found_exe" >> $GITHUB_OUTPUT
+            cp "$found_exe" Installer/dynamic-windows-x64-setup.exe
+          else
+            echo "found_exe=" >> $GITHUB_OUTPUT
+            echo "::warning::No Windows installer executable found."
+          fi
+
+      - name: Build Linux AppImage
+        if: matrix.platform == 'linux'
+        run: |
+          rm -rf Dynamic.AppDir || true
+          mkdir -p Dynamic.AppDir
+          cp -r build/linux/x64/release/bundle/* Dynamic.AppDir
+          [ -d buildtools/appimage_config ] && cp -r buildtools/appimage_config/* Dynamic.AppDir
+          [ -f assets/icons/icon-padded.png ] && cp assets/icons/icon-padded.png Dynamic.AppDir
+          chmod +x buildtools/appimagetool-x86_64.AppImage
+          chmod +x Dynamic.AppDir/AppRun
+          ./buildtools/appimagetool-x86_64.AppImage Dynamic.AppDir Dynamic.AppImage
+
+      - name: Package Web Zip
+        if: matrix.platform == 'web'
+        run: zip -r dynamic-web.zip build/web/
+
+      - name: Package Windows Portable
+        if: matrix.platform == 'windows'
+        shell: powershell
+        run: Compress-Archive -Path "build/windows/x64/runner/Release/*" -DestinationPath "dynamic-windows-portable.zip" -Force
+
+      - name: Package Linux Bundle
+        if: matrix.platform == 'linux'
+        run: zip -r dynamic-linux-bundle.zip build/linux/x64/release/bundle/
+
+      - name: Deploy Web to GitHub Pages
+        if: matrix.platform == 'web'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build/web
+          publish_branch: gh-pages
+          force_orphan: true
+          commit_message: "Deploy web ${{ github.ref_name }}"
+
+      - name: Upload GH Artifact Web
+        if: matrix.platform == 'web'
         uses: actions/upload-artifact@v4
         with:
-          name: build-output-windows-installer
-          path: Installer/windows-x86_64-setup.exe
-  build-linux:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Clone repository
-        uses: actions/checkout@v4
-      - name: Set up Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          channel: stable
-      - run: |
-          sudo apt-get update -y
-          sudo apt-get install -y ninja-build libgtk-3-dev
-          sudo apt-get install -y libmpv-dev mpv
-          sudo apt-get install -y libayatana-appindicator3-dev
-          sudo apt-get install -y keybinder-3.0
-          sudo apt-get install -y libnotify-dev
-          sudo apt-get install -y libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev
-          sudo apt-get install -y gstreamer-1.0
-          sudo apt-get install -y libsecret-1-dev
-      - run: flutter pub get
-      - run: flutter build linux --no-tree-shake-icons
-      - name: Archive production artifacts
+          name: dynamic-web
+          path: dynamic-web.zip
+
+      - name: Upload GH Artifact Windows
+        if: matrix.platform == 'windows'
         uses: actions/upload-artifact@v4
         with:
-          name: build-output-linux
-          path: build/linux/x64/release/bundle
-      - name: Build AppImage
-        run: |
-          rm -r Solian.AppDir | true
-          mkdir Solian.AppDir
-          cp -r build/linux/x64/release/bundle/* Solian.AppDir
-          cp -r buildtools/appimage_config/* Solian.AppDir
-          cp assets/icons/icon-padded.webp Solian.AppDir
-          sudo chmod +x buildtools/appimagetool-x86_64.AppImage
-          sudo chmod +x Solian.AppDir/AppRun
-          ./buildtools/appimagetool-x86_64.AppImage Solian.AppDir
-      - name: Archive production artifacts
+          name: dynamic-windows
+          path: |
+            Installer/dynamic-windows-x64-setup.exe
+            dynamic-windows-portable.zip
+          continue-on-error: true
+
+      - name: Upload GH Artifact Linux
+        if: matrix.platform == 'linux'
         uses: actions/upload-artifact@v4
         with:
-          name: build-output-linux-appimage
-          path: "./*.AppImage*"
-  upload-to-s3:
-    needs: [build-exe, build-linux]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Download Windows installer artifact
-        uses: actions/download-artifact@v4
+          name: dynamic-linux
+          path: |
+            Dynamic.AppImage
+            dynamic-linux-bundle.zip
+
+      - name: Upload GH Artifact Android
+        if: matrix.platform == 'android'
+        uses: actions/upload-artifact@v4
         with:
-          name: build-output-windows-installer
-          path: ./artifacts/windows
-      - name: Download AppImage artifact
-        uses: actions/download-artifact@v4
+          name: dynamic-android
+          path: build/app/outputs/flutter-apk/
+
+      - name: Upload To GitHub Release
+        uses: softprops/action-gh-release@v2
+        if: always()
         with:
-          name: build-output-linux-appimage
-          path: ./artifacts/linux
-      - name: Zip Windows installer
+          tag_name: ${{ github.ref_name }}
+          release_name: Dynamic ${{ github.ref_name }}
+          draft: false
+          prerelease: false
+          fail_on_unmatched_files: false
+          files: |
+            dynamic-web.zip
+            Installer/dynamic-windows-x64-setup.exe
+            dynamic-windows-portable.zip
+            Dynamic.AppImage
+            dynamic-linux-bundle.zip
+            build/app/outputs/flutter-apk/app-arm64-v8a-release.apk
+            build/app/outputs/flutter-apk/app-armeabi-v7a-release.apk
+            build/app/outputs/flutter-apk/app-x86_64-release.apk
+
+      - name: Install AWS CLI Linux
+        if: matrix.platform != 'windows'
         run: |
-          cd ./artifacts/windows
-          zip -r ../build-output-windows-installer.zip .
-      - name: Zip Linux AppImage
+          curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+          unzip -q awscliv2.zip
+          sudo ./aws/install --update
+
+      - name: Install AWS CLI Windows
+        if: matrix.platform == 'windows'
+        shell: powershell
+        run: choco install awscli -y
+
+      - name: R2 Upload Web
+        if: matrix.platform == 'web'
+        shell: bash
+        continue-on-error: true
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET_NAME }}
+          R2_ENDPOINT: ${{ secrets.R2_ENDPOINT_URL }}
         run: |
-          cd ./artifacts/linux
-          zip -r ../build-output-linux-appimage.zip .
-      - name: Upload Windows to R2
-        uses: ryand56/r2-upload-action@latest
-        with:
-          r2-account-id: ${{ secrets.R2_ACCOUNT_ID }}
-          r2-access-key-id: ${{ secrets.S3_ACCESS_KEY_ID }}
-          r2-secret-access-key: ${{ secrets.S3_SECRET_ACCESS_KEY }}
-          r2-bucket: ${{ secrets.S3_BUCKET_NAME }}
-          source-dir: ./artifacts/build-output-windows-installer.zip
-          destination-dir: solian
-      - name: Upload Linux to R2
-        uses: ryand56/r2-upload-action@latest
-        with:
-          r2-account-id: ${{ secrets.R2_ACCOUNT_ID }}
-          r2-access-key-id: ${{ secrets.S3_ACCESS_KEY_ID }}
-          r2-secret-access-key: ${{ secrets.S3_SECRET_ACCESS_KEY }}
-          r2-bucket: ${{ secrets.S3_BUCKET_NAME }}
-          source-dir: ./artifacts/build-output-linux-appimage.zip
-          destination-dir: solian
+          aws s3 cp dynamic-web.zip s3://$R2_BUCKET/solian/dynamic-web.zip --endpoint-url $R2_ENDPOINT
+
+      - name: R2 Upload Windows
+        if: matrix.platform == 'windows'
+        shell: bash
+        continue-on-error: true
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET_NAME }}
+          R2_ENDPOINT: ${{ secrets.R2_ENDPOINT_URL }}
+        run: |
+          if [ -f "Installer/dynamic-windows-x64-setup.exe" ]; then
+            aws s3 cp Installer/dynamic-windows-x64-setup.exe s3://$R2_BUCKET/solian/dynamic-windows-x64-setup.exe --endpoint-url $R2_ENDPOINT
+          fi
+          if [ -f "dynamic-windows-portable.zip" ]; then
+            aws s3 cp dynamic-windows-portable.zip s3://$R2_BUCKET/solian/dynamic-windows-portable.zip --endpoint-url $R2_ENDPOINT
+          fi
+
+      - name: R2 Upload Linux
+        if: matrix.platform == 'linux'
+        shell: bash
+        continue-on-error: true
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET_NAME }}
+          R2_ENDPOINT: ${{ secrets.R2_ENDPOINT_URL }}
+        run: |
+          [ -f "Dynamic.AppImage" ] && aws s3 cp Dynamic.AppImage s3://$R2_BUCKET/solian/Dynamic.AppImage --endpoint-url $R2_ENDPOINT
+          [ -f "dynamic-linux-bundle.zip" ] && aws s3 cp dynamic-linux-bundle.zip s3://$R2_BUCKET/solian/dynamic-linux-bundle.zip --endpoint-url $R2_ENDPOINT
+
+      - name: R2 Upload Android
+        if: matrix.platform == 'android'
+        shell: bash
+        continue-on-error: true
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET_NAME }}
+          R2_ENDPOINT: ${{ secrets.R2_ENDPOINT_URL }}
+        run: |
+          aws s3 cp build/app/outputs/flutter-apk/app-arm64-v8a-release.apk s3://$R2_BUCKET/solian/dynamic-arm64-v8a.apk --endpoint-url $R2_ENDPOINT
+          aws s3 cp build/app/outputs/flutter-apk/app-armeabi-v7a-release.apk s3://$R2_BUCKET/solian/dynamic-armeabi-v7a.apk --endpoint-url $R2_ENDPOINT
+          aws s3 cp build/app/outputs/flutter-apk/app-x86_64-release.apk s3://$R2_BUCKET/solian/dynamic-x86_64.apk --endpoint-url $R2_ENDPOINT
