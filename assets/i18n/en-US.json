@@ -1,4 +1,4 @@
-﻿{
+{
   "login": "Login",
   "loginDescription": "Existing user? We're welcome you back!",
   "forgotPassword": "Forgot password",
@@ -1008,7 +1008,7 @@
   "aboutScreenContactUsTitle": "Contact Us",
   "aboutScreenLicenseTitle": "License",
   "aboutScreenLicenseContent": "AGPLv3",
-  "aboutScreenCopyright": "All rights reserved © Solsynth {}",
+  "aboutScreenCopyright": "All rights reserved © Dynamic Team {}",
   "aboutScreenMadeWith": "Made with ❤︎️ by Dynamic Network Team",
   "aboutScreenFailedToLoadPackageInfo": "Failed to load package info: {error}",
   "copiedToClipboard": "Copied to clipboard",

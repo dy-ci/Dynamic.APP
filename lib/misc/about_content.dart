@@ -192,7 +192,7 @@ class AboutContent extends HookConsumerWidget {
                     context,
                     icon: Symbols.privacy_tip,
                     title: 'aboutScreenPrivacyPolicyTitle'.tr(),
-                    onTap: () => launchURL('https://solsynth.dev/terms/privacy-policy'),
+                    onTap: () => launchURL('https://zhaishis.com/terms/privacy-policy'),
                   ),
                   _buildListTile(
                     context,
@@ -231,7 +231,7 @@ class AboutContent extends HookConsumerWidget {
                     icon: Symbols.copyright,
                     title: 'aboutScreenLicenseTitle'.tr(),
                     subtitle: 'aboutScreenLicenseContent'.tr(),
-                    onTap: () => launchURL('https://github.com/dy-ci/Dynamic.APP/blob/v3/LICENSE.txt'),
+                    onTap: () => launchURL('https://github.com/Solsynth/Dynamic.APP/blob/v3/LICENSE.txt'),
                   ),
                   if (kIsWeb || !(Platform.isMacOS || Platform.isIOS))
                     _buildListTile(
