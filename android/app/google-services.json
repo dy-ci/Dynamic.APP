@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:961776991058:android:a8d3f7995b0b8e86f4188b",
         "android_client_info": {
-          "package_name": "dev.solsynth.solian"
+          "package_name": "com.zhaishis.dynamic"
         }
       },
       "oauth_client": [
@@ -34,7 +34,7 @@
               "client_id": "961776991058-stt7et4qvn3cpscl4r61gl1hnlatqkig.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "dev.solsynth.solian",
+                "bundle_id": "com.zhaishis.dynamic",
                 "app_store_id": "6499032345"
               }
             }
