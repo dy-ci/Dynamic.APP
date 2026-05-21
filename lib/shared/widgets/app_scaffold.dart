@@ -133,7 +133,7 @@ class WindowScaffold extends HookConsumerWidget {
                           children: [
                             const SizedBox(height: 32),
                             Text(
-                              'Solar Network',
+                              'Dynamic Network',
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 color: Theme.of(context).colorScheme.onSurface,

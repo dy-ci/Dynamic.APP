@@ -957,7 +957,7 @@ class _StoredTokenPair {
 }
 
 // ==========================================
-// Solar Network SDK Client Provider
+// Dynamic Network SDK Client Provider
 // ==========================================
 
 /// Provider for the SolarNetworkClient instance.

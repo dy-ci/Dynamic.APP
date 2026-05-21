@@ -198,7 +198,7 @@ class AboutContent extends HookConsumerWidget {
                     context,
                     icon: Symbols.description,
                     title: 'aboutScreenTermsOfServiceTitle'.tr(),
-                    onTap: () => launchURL('https://solsynth.dev/terms/user-agreement'),
+                    onTap: () => launchURL('https://zhaishis.com/terms/user-agreement'),
                   ),
                   _buildListTile(
                     context,
@@ -223,15 +223,15 @@ class AboutContent extends HookConsumerWidget {
                     context,
                     icon: Symbols.email,
                     title: 'aboutScreenContactUsTitle'.tr(),
-                    subtitle: 'lily@solsynth.dev',
-                    onTap: () => launchURL('mailto:lily@solsynth.dev'),
+                    subtitle: 'sn@dy.ci',
+                    onTap: () => launchURL('mailto:sn@dy.ci'),
                   ),
                   _buildListTile(
                     context,
                     icon: Symbols.copyright,
                     title: 'aboutScreenLicenseTitle'.tr(),
                     subtitle: 'aboutScreenLicenseContent'.tr(),
-                    onTap: () => launchURL('https://github.com/Solsynth/Solian/blob/v3/LICENSE.txt'),
+                    onTap: () => launchURL('https://github.com/dy-ci/Dynamic.APP/blob/v3/LICENSE.txt'),
                   ),
                   if (kIsWeb || !(Platform.isMacOS || Platform.isIOS))
                     _buildListTile(
@@ -240,7 +240,7 @@ class AboutContent extends HookConsumerWidget {
                       title: 'donate'.tr(),
                       subtitle: 'donateDescription'.tr(),
                       onTap: () {
-                        launchUrl(Uri.parse('https://afdian.com/@littlesheep'));
+                        launchUrl(Uri.parse('https://afdian.com/@TenShine'));
                       },
                     ),
                 ],
