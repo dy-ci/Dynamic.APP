@@ -66,8 +66,8 @@ jobs:
         if: matrix.platform == 'android'
         run: |
           echo "${{ secrets.ANDROID_KEY_PROPS }}" > android/key.properties
-          mkdir -p android/app/app/keystore
-          echo "${{ secrets.ANDROID_DC_JKS_BASE64 }}" | base64 -d > android/app/app/keystore/dc.jks
+          sed -i 's|storeFile=.*|storeFile=dc.jks|' android/key.properties
+          echo "${{ secrets.ANDROID_DC_JKS_BASE64 }}" | base64 -d > android/app/dc.jks
 
       - name: Install Dependencies
         run: flutter pub get
