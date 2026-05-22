@@ -1,4 +1,4 @@
-/* Check In Level Names */
+﻿/* Check In Level Names */
 "checkInResultT0" = "大凶";
 "checkInResultT1" = "凶";
 "checkInResultT2" = "中平";
@@ -14,7 +14,7 @@
 "loading" = "載入中...";
 "rewardPoints" = "%d";
 "rewardExperience" = "%d 經驗值";
-"footer" = "Solian 簽到";
+"footer" = "Dynamic 簽到";
 
 /* Notable Day Strings */
 "notableDayToday" = "%@是今天!";

@@ -1,9 +1,9 @@
-version: 1
+﻿version: 1
 AppDir:
   path: AppDir
   app_info:
     id: dev.solsynth.solian
-    name: Solian
+    name: Dynamic
     icon: icon-padded.png
     version: 1.0
     exec: island

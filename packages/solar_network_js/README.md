@@ -1,8 +1,8 @@
-# @solarnetwork/js-auth
+﻿# @solarnetwork/js-auth
 
-> Solar Network Web Authentication Client for JavaScript/TypeScript
+> Dynamic Network Web Authentication Client for JavaScript/TypeScript
 
-A lightweight JavaScript/TypeScript client for authenticating web applications with the Solar Network desktop app via a local HTTP server.
+A lightweight JavaScript/TypeScript client for authenticating web applications with the Dynamic Network desktop app via a local HTTP server.
 
 ## Features
 
@@ -67,7 +67,7 @@ new WebAuthClient(config?: WebAuthConfig)
 |----------|------|---------|-------------|
 | `baseUrl` | string | `'http://127.0.0.1'` | Local server base URL |
 | `defaultPort` | number | `40000` | Default port to connect to |
-| `webUrl` | string | `'https://app.solian.fr'` | Solar Network web URL |
+| `webUrl` | string | `'https://app.solian.fr'` | Dynamic Network web URL |
 
 ### Methods
 
@@ -86,7 +86,7 @@ Wait for the user to respond to an authentication request.
 
 ```typescript
 interface WaitForAuthOptions {
-  port: number;      // Port of the local Solar Network app
+  port: number;      // Port of the local Dynamic Network app
   appName: string;   // Name of your application
 }
 ```
@@ -146,7 +146,7 @@ if (result.status === 'success') {
 
 ```
 ┌─────────────┐                              ┌─────────────────┐
-│  Your App   │                              │  Solar Network   │
+│  Your App   │                              │  Dynamic Network   │
 │  (Browser)  │                              │  Desktop App    │
 └──────┬──────┘                              └────────┬────────┘
        │                                               │

@@ -1,4 +1,4 @@
-import 'dart:io';
+﻿import 'dart:io';
 import 'dart:ui';
 import 'package:auto_route/auto_route.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -158,7 +158,7 @@ class WindowScaffold extends HookConsumerWidget {
                                   ),
                                   const SizedBox(width: 8),
                                   Text(
-                                    'Solar Network',
+                                    'Dynamic Network',
                                     textAlign: TextAlign.start,
                                   ),
                                 ],

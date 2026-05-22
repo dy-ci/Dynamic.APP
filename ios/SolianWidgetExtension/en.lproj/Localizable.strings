@@ -1,4 +1,4 @@
-/* Check In Level Names */
+﻿/* Check In Level Names */
 "checkInResultT0" = "Great Misfortune";
 "checkInResultT1" = "Misfortune";
 "checkInResultT2" = "Moderate";
@@ -14,7 +14,7 @@
 "loading" = "Loading...";
 "rewardPoints" = "%d";
 "rewardExperience" = "%d EXP";
-"footer" = "Solian Check In";
+"footer" = "Dynamic Check In";
 
 /* Notable Day Strings */
 "notableDayToday" = "%@ is today!";

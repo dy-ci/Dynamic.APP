@@ -1,6 +1,6 @@
-//
-//  SolianPostShuffleWidget.swift
-//  SolianWidgetExtension
+﻿//
+//  DynamicPostShuffleWidget.swift
+//  DynamicWidgetExtension
 //
 //  Created by LittleSheep on 2026/1/4.
 //
@@ -466,8 +466,8 @@ struct PostShuffleWidgetRootView: View {
     }
 }
 
-struct SolianPostShuffleWidget: Widget {
-    let kind: String = "SolianPostShuffleWidget"
+struct DynamicPostShuffleWidget: Widget {
+    let kind: String = "DynamicPostShuffleWidget"
     
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: PostShuffleProvider()) { entry in
@@ -484,7 +484,7 @@ struct SolianPostShuffleWidget: Widget {
 }
 
 #Preview(as: .systemMedium) {
-    SolianPostShuffleWidget()
+    DynamicPostShuffleWidget()
 } timeline: {
     PostShuffleEntry(
         date: .now,
@@ -514,13 +514,13 @@ struct SolianPostShuffleWidget: Widget {
 }
 
 #Preview(as: .systemLarge) {
-    SolianPostShuffleWidget()
+    DynamicPostShuffleWidget()
 } timeline: {
     PostShuffleEntry(
         date: .now,
         post: SnPost(
             id: "test-post-id",
-            title: "Welcome to the Solar Network!",
+            title: "Welcome to the Dynamic Network!",
             description: "This is a test post description that is a bit longer to demonstrate the widget layout with various content types",
             content: "This is content of a test post. It can be longer and show more text in the widget. The large widget should display more content and allow for better reading experience. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             publisher: SnPostPublisher(

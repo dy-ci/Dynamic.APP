@@ -1,4 +1,4 @@
-import 'dart:io';
+﻿import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +16,7 @@ enum PushNotificationProvider {
   int get remoteType => switch (this) {
     PushNotificationProvider.apple => 0,
     PushNotificationProvider.fcm => 1,
-    // 2 is for Solar Network Push
+    // 2 is for Dynamic Network Push
     PushNotificationProvider.unifiedpush => 3,
   };
 

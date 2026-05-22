@@ -1,5 +1,5 @@
-/**
- * Type definitions for Solar Network Web Authentication Client
+﻿/**
+ * Type definitions for Dynamic Network Web Authentication Client
  */
 
 /**
@@ -44,7 +44,7 @@ export interface WebAuthConfig {
   baseUrl?: string;
   /** The default port to connect to (default: 40000) */
   defaultPort?: number;
-  /** The Solar Network web URL for auth redirects (default: 'https://app.solian.fr') */
+  /** The Dynamic Network web URL for auth redirects (default: 'https://app.solian.fr') */
   webUrl?: string;
 }
 
@@ -52,7 +52,7 @@ export interface WebAuthConfig {
  * Options for waitForAuth
  */
 export interface WaitForAuthOptions {
-  /** The port of the local Solar Network app */
+  /** The port of the local Dynamic Network app */
   port: number;
   /** The name of your application */
   appName: string;
@@ -62,7 +62,7 @@ export interface WaitForAuthOptions {
  * Options for exchangeToken
  */
 export interface ExchangeTokenOptions {
-  /** The port of the local Solar Network app */
+  /** The port of the local Dynamic Network app */
   port: number;
   /** The signed challenge returned from waitForAuth */
   signedChallenge: string;
@@ -76,7 +76,7 @@ export interface ExchangeTokenOptions {
  * Options for fetchAccountInfo
  */
 export interface FetchAccountInfoOptions {
-  /** The port of the local Solar Network app */
+  /** The port of the local Dynamic Network app */
   port: number;
   /** The authentication token */
   token: string;

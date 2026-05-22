@@ -1,4 +1,4 @@
-//
+﻿//
 //  NetworkService.swift
 //  WatchRunner Watch App
 //
@@ -82,7 +82,7 @@ class NetworkService {
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        request.setValue("SolianWatch/1.0", forHTTPHeaderField: "User-Agent")
+        request.setValue("DynamicWatch/1.0", forHTTPHeaderField: "User-Agent")
         
         let (data, _) = try await session.data(for: request)
         
@@ -112,7 +112,7 @@ class NetworkService {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        request.setValue("SolianWatch/1.0", forHTTPHeaderField: "User-Agent")
+        request.setValue("DynamicWatch/1.0", forHTTPHeaderField: "User-Agent")
         
         let body: [String: Any] = [
             "content": content,
@@ -146,7 +146,7 @@ class NetworkService {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        request.setValue("SolianWatch/1.0", forHTTPHeaderField: "User-Agent")
+        request.setValue("DynamicWatch/1.0", forHTTPHeaderField: "User-Agent")
         
         let body: [String: Any] = [
             "content": content,
@@ -182,7 +182,7 @@ class NetworkService {
         request.httpMethod = "GET"
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        request.setValue("SolianWatch/1.0", forHTTPHeaderField: "User-Agent")
+        request.setValue("DynamicWatch/1.0", forHTTPHeaderField: "User-Agent")
         
         let (data, response) = try await session.data(for: request)
         
@@ -213,7 +213,7 @@ class NetworkService {
         request.httpMethod = "GET"
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        request.setValue("SolianWatch/1.0", forHTTPHeaderField: "User-Agent")
+        request.setValue("DynamicWatch/1.0", forHTTPHeaderField: "User-Agent")
         
         let (data, response) = try await session.data(for: request)
         
@@ -250,7 +250,7 @@ class NetworkService {
         request.httpMethod = "GET"
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        request.setValue("SolianWatch/1.0", forHTTPHeaderField: "User-Agent")
+        request.setValue("DynamicWatch/1.0", forHTTPHeaderField: "User-Agent")
         
         let (data, response) = try await session.data(for: request)
         
@@ -286,7 +286,7 @@ class NetworkService {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        request.setValue("SolianWatch/1.0", forHTTPHeaderField: "User-Agent")
+        request.setValue("DynamicWatch/1.0", forHTTPHeaderField: "User-Agent")
         
         var body: [String: Any] = [
             "attitude": attitude,
@@ -334,7 +334,7 @@ class NetworkService {
         request.httpMethod = "DELETE"
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        request.setValue("SolianWatch/1.0", forHTTPHeaderField: "User-Agent")
+        request.setValue("DynamicWatch/1.0", forHTTPHeaderField: "User-Agent")
         
         let (data, response) = try await session.data(for: request)
         
@@ -358,7 +358,7 @@ class NetworkService {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        request.setValue("SolianWatch/1.0", forHTTPHeaderField: "User-Agent")
+        request.setValue("DynamicWatch/1.0", forHTTPHeaderField: "User-Agent")
         
         let body: [String: Any] = ["symbol": symbol, "attitude": attitude]
         request.httpBody = try JSONSerialization.data(withJSONObject: body)
@@ -392,7 +392,7 @@ class NetworkService {
         request.httpMethod = "GET"
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        request.setValue("SolianWatch/1.0", forHTTPHeaderField: "User-Agent")
+        request.setValue("DynamicWatch/1.0", forHTTPHeaderField: "User-Agent")
         
         let (data, response) = try await session.data(for: request)
         
@@ -439,7 +439,7 @@ class NetworkService {
         request.httpMethod = "GET"
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        request.setValue("SolianWatch/1.0", forHTTPHeaderField: "User-Agent")
+        request.setValue("DynamicWatch/1.0", forHTTPHeaderField: "User-Agent")
         
         let (data, response) = try await session.data(for: request)
         
@@ -464,7 +464,7 @@ class NetworkService {
         request.httpMethod = "GET"
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        request.setValue("SolianWatch/1.0", forHTTPHeaderField: "User-Agent")
+        request.setValue("DynamicWatch/1.0", forHTTPHeaderField: "User-Agent")
         
         let (data, _) = try await session.data(for: request)
         
@@ -486,7 +486,7 @@ class NetworkService {
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        request.setValue("SolianWatch/1.0", forHTTPHeaderField: "User-Agent")
+        request.setValue("DynamicWatch/1.0", forHTTPHeaderField: "User-Agent")
         
         let (data, response) = try await session.data(for: request)
         
@@ -507,7 +507,7 @@ class NetworkService {
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        request.setValue("SolianWatch/1.0", forHTTPHeaderField: "User-Agent")
+        request.setValue("DynamicWatch/1.0", forHTTPHeaderField: "User-Agent")
         
         let (data, response) = try await session.data(for: request)
         
@@ -545,7 +545,7 @@ class NetworkService {
         request.httpMethod = "GET"
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        request.setValue("SolianWatch/1.0", forHTTPHeaderField: "User-Agent")
+        request.setValue("DynamicWatch/1.0", forHTTPHeaderField: "User-Agent")
         
         let (data, response) = try await session.data(for: request)
         

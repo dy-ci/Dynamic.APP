@@ -1,8 +1,8 @@
-/**
- * Solar Network Web Authentication Client
+﻿/**
+ * Dynamic Network Web Authentication Client
  * 
  * This client enables JavaScript/TypeScript applications to authenticate
- * with the Solar Network desktop app via a local HTTP server.
+ * with the Dynamic Network desktop app via a local HTTP server.
  * 
  * Usage:
  * ```typescript
@@ -52,9 +52,9 @@ const DEFAULT_CONFIG: Required<WebAuthConfig> = {
 };
 
 /**
- * Web Authentication Client for Solar Network
+ * Web Authentication Client for Dynamic Network
  * 
- * Connects to the Solar Network desktop app's local authentication server
+ * Connects to the Dynamic Network desktop app's local authentication server
  * to perform secure authentication without requiring users to re-enter credentials.
  */
 export class WebAuthClient {
@@ -75,7 +75,7 @@ export class WebAuthClient {
   /**
    * Get the authentication URL to open in a browser
    * 
-   * This URL redirects the user to the Solar Network web app for additional
+   * This URL redirects the user to the Dynamic Network web app for additional
    * authentication if needed.
    * 
    * @param port - The port of the local server
@@ -89,7 +89,7 @@ export class WebAuthClient {
   /**
    * Wait for user to respond to authentication request
    * 
-   * This method opens a long-polling connection to the local Solar Network app.
+   * This method opens a long-polling connection to the local Dynamic Network app.
    * It will wait until the user either allows or denies the authentication request.
    * 
    * The connection remains open while the user decides. This method will return:
@@ -206,7 +206,7 @@ export class WebAuthClient {
   /**
    * Fetch account information using an auth token
    * 
-   * This endpoint proxies through the local Solar Network app to fetch
+   * This endpoint proxies through the local Dynamic Network app to fetch
    * the authenticated user's account info.
    * 
    * @param options - Options including port and token

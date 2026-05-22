@@ -1,7 +1,7 @@
-# Solian (Solar Network)
+﻿# Dynamic (Dynamic Network)
 
 <p align="center">
-  <img src="assets/icons/icon.webp" width="120" alt="Solian Logo">
+  <img src="assets/icons/icon.webp" width="120" alt="Dynamic Logo">
 </p>
 
 <p align="center">
@@ -16,13 +16,13 @@
 
 ---
 
-Solian (also known as Solar Network) is a social networking platform, designed to help you express yourself freely and connect with others. We're not aiming to replace any major platform—just providing another peaceful community for you to be part of.
+Dynamic (also known as Dynamic Network) is a social networking platform, designed to help you express yourself freely and connect with others. We're not aiming to replace any major platform—just providing another peaceful community for you to be part of.
 
 Note: Fediverse support is currently experimental and limited.
 
 > **Help us translate!** Click the Crowdin badge above to contribute translations.
 >
-> If you read Chinese, visit our documentation: [Suki - Solar Network](https://kb.solsynth.dev/zh/solar-network) | [中文 README](./README_CN.md)
+> If you read Chinese, visit our documentation: [Suki - Dynamic Network](https://kb.solsynth.dev/zh/solar-network) | [中文 README](./README_CN.md)
 
 ---
 
@@ -60,7 +60,7 @@ Note: Fediverse support is currently experimental and limited.
 | File Management | Done | Upload and organize files |
 | AI Features | Done | Smart assistance throughout the app |
 | Fitness & Health | Beta | Track your fitness goal and share with your friends |
-| Progressions | Done | Make your move on Solar Network memorizable |
+| Progressions | Done | Make your move on Dynamic Network memorizable |
 | Fediverse | Beta | Interact with other fediverse instances |
 
 ### Coming Soon
@@ -78,7 +78,7 @@ Note: Fediverse support is currently experimental and limited.
    - **Stable vs Pre-release:** Pre-releases include cutting-edge features but may have untested changes. Since we don't use API versioning, breaking changes may affect stable releases—consider using pre-releases for the best experience.
 
 2. **Create an Account**
-   - Sign up on the Solar Network
+   - Sign up on the Dynamic Network
    - Verify your email address
    - Start exploring!
 
@@ -125,7 +125,7 @@ See the [Flutter documentation](https://docs.flutter.dev) for more build options
 
 This repository is organized as a monorepo containing useful Dart packages under the `packages/` directory.
 
-Want to build with Solar Network? Check out:
+Want to build with Dynamic Network? Check out:
 
 - [Documentation](https://kb.solsynth.dev)
 - [API Reference](https://api.solsynth.dev)
@@ -135,7 +135,7 @@ Want to build with Solar Network? Check out:
 
 ## Server
 
-The backend powering Solar Network is available at:
+The backend powering Dynamic Network is available at:
 **[Solsynth/DysonNetwork](https://github.com/Solsynth/DysonNetwork)**
 
 ---
@@ -161,5 +161,5 @@ We welcome contributions! Please read our [Code of Conduct](./CODE_OF_CONDUCT.md
 ---
 
 <p align="center">
-  Made with love by the Solar Network Team
+  Made with love by the Dynamic Network Team
 </p>

@@ -61,6 +61,7 @@ Widget _buildArticlePreviewCard(BuildContext context, SnPost post) {
       ),
       borderRadius: const BorderRadius.all(Radius.circular(8)),
     ),
+    margin: const EdgeInsets.only(top: 4),
     child: Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -98,7 +99,7 @@ Widget _buildArticlePreviewCard(BuildContext context, SnPost post) {
         ).padding(horizontal: 16, vertical: 12),
       ],
     ),
-  ).padding(top: 4);
+  );
 }
 
 class RepliesState {

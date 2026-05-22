@@ -1,4 +1,4 @@
-import 'dart:async';
+﻿import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 import 'dart:math';
@@ -1642,7 +1642,7 @@ class FileDownloadService {
       final filePath = await _downloadToTemp(item, extName);
 
       if (!kIsWeb && (Platform.isAndroid || Platform.isIOS)) {
-        await Gal.putImage(filePath, album: 'Solar Network');
+        await Gal.putImage(filePath, album: 'Dynamic Network');
         showSnackBar('Image saved to gallery');
       } else {
         await FileSaver.instance.saveFile(

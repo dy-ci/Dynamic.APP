@@ -1,4 +1,4 @@
-import 'package:auto_route/auto_route.dart';
+﻿import 'package:auto_route/auto_route.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -357,9 +357,9 @@ String? _resolveScannedAccountName(String rawValue) {
   final uri = Uri.tryParse(value);
   if (uri != null) {
     final segments = uri.pathSegments;
-    final isSolianHost =
+    final isDynamicHost =
         uri.host == 'solian.app' || uri.host.endsWith('.solian.app');
-    if (isSolianHost && segments.length >= 2 && segments.first == 'accounts') {
+    if (isDynamicHost && segments.length >= 2 && segments.first == 'accounts') {
       final name = segments[1].trim();
       return name.isEmpty ? null : name;
     }

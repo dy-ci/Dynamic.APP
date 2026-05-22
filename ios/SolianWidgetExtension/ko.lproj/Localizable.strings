@@ -1,4 +1,4 @@
-/* Check In Level Names */
+﻿/* Check In Level Names */
 "checkInResultT0" = "대흉";
 "checkInResultT1" = "흉";
 "checkInResultT2" = "중평";
@@ -14,7 +14,7 @@
 "loading" = "로딩 중...";
 "rewardPoints" = "%d";
 "rewardExperience" = "%d 경험치";
-"footer" = "Solian 체크인";
+"footer" = "Dynamic 체크인";
 
 /* Notable Day Strings */
 "notableDayToday" = "%@ 오늘입니다!";

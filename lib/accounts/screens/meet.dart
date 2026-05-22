@@ -1,4 +1,4 @@
-import 'dart:async';
+﻿import 'dart:async';
 
 import 'package:auto_route/auto_route.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -2510,7 +2510,7 @@ class _MeetDiscoverySection extends HookConsumerWidget {
                       urlTemplate:
                           'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
                       userAgentPackageName:
-                          'Solian/1.0 (+https://solian.app, contact: lily@solsynth.dev)',
+                          'Dynamic/1.0 (+https://solian.app, contact: lily@solsynth.dev)',
                     ),
                     RichAttributionWidget(
                       attributions: [
@@ -3488,7 +3488,7 @@ class _MeetLocationMapCard extends StatelessWidget {
                   retinaMode: true,
                   urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
                   userAgentPackageName:
-                      'Solian/1.0 (+https://solian.app, contact: lily@solsynth.dev)',
+                      'Dynamic/1.0 (+https://solian.app, contact: lily@solsynth.dev)',
                 ),
                 RichAttributionWidget(
                   attributions: [
@@ -3789,7 +3789,7 @@ class _MeetPinsMapCard extends StatelessWidget {
               retinaMode: true,
               urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
               userAgentPackageName:
-                  'Solian/1.0 (+https://solian.app, contact: lily@solsynth.dev)',
+                  'Dynamic/1.0 (+https://solian.app, contact: lily@solsynth.dev)',
             ),
             RichAttributionWidget(
               attributions: [

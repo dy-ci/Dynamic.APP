@@ -1,4 +1,4 @@
-platform :ios, '16.0'
+﻿platform :ios, '16.0'
 
 # CocoaPods analytics sends network stats synchronously affecting flutter build latency.
 ENV['COCOAPODS_DISABLE_STATS'] = 'true'
@@ -32,11 +32,11 @@ target 'Runner' do
 
   flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
 
-  target 'SolianShareExtension' do
+  target 'DynamicShareExtension' do
     inherit! :search_paths
   end
 
-  target 'SolianNotificationService' do
+  target 'DynamicNotificationService' do
     inherit! :search_paths
   end
 end

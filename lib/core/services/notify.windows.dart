@@ -1,4 +1,4 @@
-import 'dart:async';
+﻿import 'dart:async';
 import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
@@ -68,7 +68,7 @@ Future<void> _speakNotification(
 
 Future<void> initializeLocalNotifications(WidgetRef _) async {
   // Initialize Windows notification for Windows platform
-  windowsNotification = winty.WindowsNotification(applicationId: "Solian");
+  windowsNotification = winty.WindowsNotification(applicationId: "Dynamic");
 
   WidgetsBinding.instance.addObserver(
     LifecycleEventHandler(onAppLifecycleChanged: _onAppLifecycleChanged),

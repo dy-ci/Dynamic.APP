@@ -1,4 +1,4 @@
-//
+﻿//
 //  ImageLoader.swift
 //  WatchRunner Watch App
 //
@@ -34,7 +34,7 @@ class ImageLoader: ObservableObject {
         let modifier = AnyModifier { request in
             var r = request
             r.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-            r.setValue("SolianWatch/1.0", forHTTPHeaderField: "User-Agent")
+            r.setValue("DynamicWatch/1.0", forHTTPHeaderField: "User-Agent")
             return r
         }
 

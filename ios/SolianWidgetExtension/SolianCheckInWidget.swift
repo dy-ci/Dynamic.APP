@@ -1,6 +1,6 @@
-//
-//  SolianWidgetExtension.swift
-//  SolianWidgetExtension
+﻿//
+//  DynamicWidgetExtension.swift
+//  DynamicWidgetExtension
 //
 //  Created by LittleSheep on 2026/1/3.
 //
@@ -470,7 +470,7 @@ struct CheckInWidgetEntryView: View {
     @ViewBuilder
     private func WidgetFooter() -> some View {
         HStack {
-            Text("Solian")
+            Text("Dynamic")
                 .font(.caption2)
                 .fontWeight(.medium)
                 .foregroundColor(.secondary)
@@ -623,8 +623,8 @@ struct CheckInWidgetRootView: View {
     }
 }
 
-struct SolianCheckInWidget: Widget {
-    let kind: String = "SolianCheckInWidget"
+struct DynamicCheckInWidget: Widget {
+    let kind: String = "DynamicCheckInWidget"
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
@@ -645,13 +645,13 @@ struct SolianCheckInWidget: Widget {
 }
 
 #Preview(as: .systemSmall) {
-    SolianCheckInWidget()
+    DynamicCheckInWidget()
 } timeline: {
     CheckInEntry(date: .now, result: nil, notableDay: nil, error: nil, isLoading: false)
 }
 
 #Preview(as: .systemMedium) {
-    SolianCheckInWidget()
+    DynamicCheckInWidget()
 } timeline: {
     CheckInEntry(
         date: .now,
@@ -686,7 +686,7 @@ struct SolianCheckInWidget: Widget {
 
 #if os(iOS)
 #Preview(as: .accessoryRectangular) {
-    SolianCheckInWidget()
+    DynamicCheckInWidget()
 } timeline: {
     CheckInEntry(
         date: .now,

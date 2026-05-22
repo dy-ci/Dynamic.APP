@@ -1,6 +1,6 @@
-//
+﻿//
 //  ShareViewController.swift
-//  SolianShareExtension
+//  DynamicShareExtension
 //
 //  Created by LittleSheep on 2025/6/25.
 //

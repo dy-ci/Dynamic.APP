@@ -1,5 +1,5 @@
-name: solar_network_sdk
-description: "Solar Network SDK for Dart - Core networking, authentication, and cloud file services"
+﻿name: solar_network_sdk
+description: "Dynamic Network SDK for Dart - Core networking, authentication, and cloud file services"
 version: 1.0.0
 publish_to: none
 

@@ -1,5 +1,5 @@
-name: solar_network_sdk_example
-description: "Example app for Solar Network SDK"
+﻿name: solar_network_sdk_example
+description: "Example app for Dynamic Network SDK"
 publish_to: none
 
 environment:

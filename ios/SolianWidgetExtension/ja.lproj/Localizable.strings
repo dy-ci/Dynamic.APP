@@ -1,4 +1,4 @@
-/* Check In Level Names */
+﻿/* Check In Level Names */
 "checkInResultT0" = "大凶";
 "checkInResultT1" = "凶";
 "checkInResultT2" = "中平";
@@ -14,7 +14,7 @@
 "loading" = "読み込み中...";
 "rewardPoints" = "%d";
 "rewardExperience" = "%d 経験値";
-"footer" = "Solian チェックイン";
+"footer" = "Dynamic チェックイン";
 
 /* Notable Day Strings */
 "notableDayToday" = "%@は今日です!";

@@ -1,6 +1,6 @@
-# Code of Conduct
+﻿# Code of Conduct
 
-Welcome to the Solar Network / HyperNet project!
+Welcome to the Dynamic Network / HyperNet project!
 
 We're welcome for any contribution, from bug reports to feature requests to code contributions.
 
@@ -8,9 +8,9 @@ To get started, start from fork the repository.
 
 ## Project Structure
 
-The current repository you're visiting is the front-end project for the Solar Network project. It's built by Flutter and also manages all feature requests and issues reports in this repository.
+The current repository you're visiting is the front-end project for the Dynamic Network project. It's built by Flutter and also manages all feature requests and issues reports in this repository.
 
-The backend of the Solar Network is written in Go and is a microservices app. The code is stored separately in different repositories. They're linked in the README.MD, you can have a look and try to contribute if you want.
+The backend of the Dynamic Network is written in Go and is a microservices app. The code is stored separately in different repositories. They're linked in the README.MD, you can have a look and try to contribute if you want.
 
 ## Commit Messages
 
@@ -28,7 +28,7 @@ To contribute new features, please create an issue or mention the feature you wa
 
 ## Bug Reports / Ask for help
 
-Read the error message, check for the update (including pre-releases), and wiki before creating an issue. At the same time, be respectful and don't argue with our developers and contributors in the development chat or GitHub issue. Otherwise your issue may got deleted and your Solar Network Account may got a strike.
+Read the error message, check for the update (including pre-releases), and wiki before creating an issue. At the same time, be respectful and don't argue with our developers and contributors in the development chat or GitHub issue. Otherwise your issue may got deleted and your Dynamic Network Account may got a strike.
 
 ## Styles of Code
 
@@ -38,4 +38,4 @@ When the code contains comments, use English. We do not any other language of co
 
 -----------
 
-We appreciate every single commit you contributed. Let's work together and create a better Solar Network!
+We appreciate every single commit you contributed. Let's work together and create a better Dynamic Network!

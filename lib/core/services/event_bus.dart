@@ -1,4 +1,4 @@
-import 'package:event_bus/event_bus.dart';
+﻿import 'package:event_bus/event_bus.dart';
 import 'package:solar_network_sdk/solar_network_sdk.dart';
 
 /// Global event bus instance for the application
@@ -124,10 +124,10 @@ class ShowThoughtSheetEvent {
 
 /// Event fired when a custom dynamic:// deep link is received on platforms
 /// that deliver it via sharing intents.
-class SolianDeepLinkEvent {
+class DynamicDeepLinkEvent {
   final Uri uri;
 
-  const SolianDeepLinkEvent(this.uri);
+  const DynamicDeepLinkEvent(this.uri);
 }
 
 /// Event fired when MLS epoch changes for a room

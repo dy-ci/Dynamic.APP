@@ -1,4 +1,4 @@
-//
+﻿//
 //  AppInfoHeader.swift
 //  Runner
 //
@@ -21,7 +21,7 @@ struct AppInfoHeaderView : View {
                     .frame(width: 40, height: 40)
                 
                 VStack(alignment: .leading) {
-                    Text("Solian").font(.headline)
+                    Text("Dynamic").font(.headline)
                     Text("for Apple Watch").font(.system(size: 11))
                     
                     // Display WebSocket connection status

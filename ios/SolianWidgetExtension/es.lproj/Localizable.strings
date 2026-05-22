@@ -1,4 +1,4 @@
-/* Check In Level Names */
+﻿/* Check In Level Names */
 "checkInResultT0" = "Gran Desventura";
 "checkInResultT1" = "Desventura";
 "checkInResultT2" = "Moderado";
@@ -14,7 +14,7 @@
 "loading" = "Cargando...";
 "rewardPoints" = "%d";
 "rewardExperience" = "%d EXP";
-"footer" = "Registro Solian";
+"footer" = "Registro Dynamic";
 
 /* Notable Day Strings */
 "notableDayToday" = "%@ es hoy!";

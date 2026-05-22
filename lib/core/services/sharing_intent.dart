@@ -1,4 +1,4 @@
-import 'dart:async';
+﻿import 'dart:async';
 import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -119,7 +119,7 @@ class SharingIntentService {
         Logger.root.info(
           "SharingIntentService: Dispatching deep link $solianDeepLink",
         );
-        eventBus.fire(SolianDeepLinkEvent(uri));
+        eventBus.fire(DynamicDeepLinkEvent(uri));
         return;
       }
     }

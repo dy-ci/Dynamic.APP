@@ -1,7 +1,7 @@
-{
+﻿{
   "name": "@solarnetwork/js-auth",
   "version": "1.0.0",
-  "description": "Solar Network Web Authentication Client for JavaScript/TypeScript",
+  "description": "Dynamic Network Web Authentication Client for JavaScript/TypeScript",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -24,7 +24,7 @@
     "oauth",
     "sdk"
   ],
-  "author": "Solar Network",
+  "author": "Dynamic Network",
   "license": "MIT",
   "repository": {
     "type": "git",

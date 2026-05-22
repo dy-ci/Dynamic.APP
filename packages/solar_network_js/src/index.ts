@@ -1,8 +1,8 @@
-/**
- * Solar Network Web Authentication Client
+﻿/**
+ * Dynamic Network Web Authentication Client
  * 
  * This module provides a JavaScript/TypeScript client for authenticating
- * with the Solar Network desktop app via local HTTP server.
+ * with the Dynamic Network desktop app via local HTTP server.
  */
 
 export { WebAuthClient } from './client';

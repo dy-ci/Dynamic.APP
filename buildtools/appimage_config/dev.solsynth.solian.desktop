@@ -1,9 +1,9 @@
-[Desktop Entry]
+﻿[Desktop Entry]
 Version=1.0
 Type=Application
-Name=Solian
+Name=Dynamic
 GenericName=Social Media App
-Comment=Connect with friends and communities on Solar Network
+Comment=Connect with friends and communities on Dynamic Network
 
 Exec=island %U
 Icon=icon-padded

@@ -1,7 +1,7 @@
-# Solian (Solar Network)
+﻿# Dynamic (Dynamic Network)
 
 <p align="center">
-  <img src="assets/icons/icon.webp" width="120" alt="Solian Logo">
+  <img src="assets/icons/icon.webp" width="120" alt="Dynamic Logo">
 </p>
 
 <p align="center">
@@ -16,7 +16,7 @@
 
 ---
 
-Solian（又名 Solar Network）是一个社交平台，旨在帮助你自由表达自我并与他人建立联系。我们并不打算取代任何主流平台——只是为你提供另一个宁静和谐的社区选择。
+Dynamic（又名 Dynamic Network）是一个社交平台，旨在帮助你自由表达自我并与他人建立联系。我们并不打算取代任何主流平台——只是为你提供另一个宁静和谐的社区选择。
 
 注意：联邦宇宙（Fediverse）支持目前处于实验阶段，功能有限。
 
@@ -24,7 +24,7 @@ Solian（又名 Solar Network）是一个社交平台，旨在帮助你自由表
 
 > **帮助我们翻译！** 点击上方的 Crowdin 徽章参与翻译贡献。
 >
-> 中文文档：[Suki - Solar Network](https://kb.solsynth.dev/zh/solar-network) | [English README](./README.md)
+> 中文文档：[Suki - Dynamic Network](https://kb.solsynth.dev/zh/solar-network) | [English README](./README.md)
 
 ---
 
@@ -62,7 +62,7 @@ Solian（又名 Solar Network）是一个社交平台，旨在帮助你自由表
 | 文件管理 | 已完成 | 上传和管理文件 |
 | AI 功能 | 已完成 | 智能助手功能 |
 | 运动与健康 | 测试版 | 追踪健康和运动目标 |
-| 成就与进度 | 已完成 | 记录你在 Solar Network 的一点一滴 |
+| 成就与进度 | 已完成 | 记录你在 Dynamic Network 的一点一滴 |
 | 联邦网络 | 测试版 | 与其他联邦实例互动 |
 
 ### 即将推出
@@ -80,7 +80,7 @@ Solian（又名 Solar Network）是一个社交平台，旨在帮助你自由表
    - **稳定版与预发布版的区别：** 预发布版包含最新功能但可能未经充分测试。由于我们不做 API 版本控制，破坏性更新可能会影响稳定版，因此建议使用预发布版以获得最佳体验。
 
 2. **创建账号**
-   - 在 Solar Network 上注册账号
+   - 在 Dynamic Network 上注册账号
    - 验证你的邮箱地址
    - 开始探索吧！
 
@@ -127,7 +127,7 @@ flutter build <platform>
 
 本仓库采用单体仓库（monorepo）结构，在 `packages/` 目录下包含多个实用的 Dart 软件包。
 
-想要基于 Solar Network 进行开发？查看以下资源：
+想要基于 Dynamic Network 进行开发？查看以下资源：
 
 - [开发文档](https://kb.solsynth.dev)
 - [API 文档](https://api.solsynth.dev)
@@ -137,7 +137,7 @@ flutter build <platform>
 
 ## 服务端
 
-Solar Network 的后端服务位于：
+Dynamic Network 的后端服务位于：
 **[Solsynth/DysonNetwork](https://github.com/Solsynth/DysonNetwork)**
 
 ---
@@ -163,5 +163,5 @@ Solar Network 的后端服务位于：
 ---
 
 <p align="center">
-  Made with love by the Solar Network Team
+  Made with love by the Dynamic Network Team
 </p>

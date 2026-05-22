@@ -1,6 +1,6 @@
-//
+﻿//
 //  Networking.swift
-//  SolianWidgetExtensionExtension
+//  DynamicWidgetExtensionExtension
 //
 //  Created by LittleSheep on 2026/1/4.
 //

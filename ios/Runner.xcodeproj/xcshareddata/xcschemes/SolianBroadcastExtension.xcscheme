@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <Scheme
    LastUpgradeVersion = "2620"
    version = "2.0">
@@ -16,8 +16,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "73ACDFAA2E3D0E6100B63535"
-               BuildableName = "SolianBroadcastExtension.appex"
-               BlueprintName = "SolianBroadcastExtension"
+               BuildableName = "DynamicBroadcastExtension.appex"
+               BlueprintName = "DynamicBroadcastExtension"
                ReferencedContainer = "container:Runner.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

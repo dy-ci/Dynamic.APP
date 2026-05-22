@@ -1,4 +1,4 @@
-import 'package:easy_localization/easy_localization.dart';
+﻿import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:island/accounts/screens/check_in.dart';
@@ -398,7 +398,7 @@ class _CheckInScreenshotFooter extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text(
-                  'Solar Network',
+                  'Dynamic Network',
                   style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
                 ),
                 const Text(

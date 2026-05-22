@@ -1,4 +1,4 @@
-; ==================================================
+﻿; ==================================================
 #define AppVersion "3.3.0"
 #define BuildNumber "144"
 ; ==================================================
@@ -11,7 +11,7 @@ AppVersion={#AppVersion}
 AppPublisher=Dynamic Team
 AppPublisherURL=https://dynamic.team
 AppSupportURL=https://kb.solsynth.dev/zh/solar-network
-AppUpdatesURL=https://github.com/Solsynth/Solian/releases
+AppUpdatesURL=https://github.com/Solsynth/Dynamic/releases
 AppCopyright=Copyright © 2025 Dynamic Team
 VersionInfoVersion={#FullVersion}
 UninstallDisplayName=Dynamic

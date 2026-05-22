@@ -1,4 +1,4 @@
-import 'package:easy_localization/easy_localization.dart';
+﻿import 'package:easy_localization/easy_localization.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -1429,7 +1429,7 @@ class NotificationSubscriptionsSheet extends ConsumerWidget {
       case SnNotificationPushSubscriptionProvider.fcm:
         return 'Firebase (FCM)';
       case SnNotificationPushSubscriptionProvider.sop:
-        return 'Solar Network Push (SOP)';
+        return 'Dynamic Network Push (SOP)';
       case SnNotificationPushSubscriptionProvider.unifiedpush:
         return 'UnifiedPush';
     }

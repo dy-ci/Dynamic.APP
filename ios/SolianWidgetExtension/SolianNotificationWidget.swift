@@ -1,5 +1,5 @@
-//
-//  SolianNotificationWidget.swift
+﻿//
+//  DynamicNotificationWidget.swift
 //  Runner
 //
 //  Created by LittleSheep on 2026/1/4.
@@ -352,7 +352,7 @@ struct NotificationWidgetEntryView: View {
                                 }
                             }
                             
-                            Text("on the Solar Network")
+                            Text("on the Dynamic Network")
                                 .font(.caption2)
                                 .foregroundColor(.secondary)
                                 .padding(.horizontal, 1.5)
@@ -692,8 +692,8 @@ struct NotificationWidgetRootView: View {
     }
 }
 
-struct SolianNotificationWidget: Widget {
-    let kind: String = "SolianNotificationWidget"
+struct DynamicNotificationWidget: Widget {
+    let kind: String = "DynamicNotificationWidget"
     
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: NotificationProvider()) { entry in
@@ -715,7 +715,7 @@ struct SolianNotificationWidget: Widget {
 
 #if os(iOS)
 #Preview(as: .accessoryRectangular) {
-    SolianNotificationWidget()
+    DynamicNotificationWidget()
 } timeline: {
     NotificationEntry(
         date: .now,
@@ -757,7 +757,7 @@ struct SolianNotificationWidget: Widget {
 #endif
 
 #Preview(as: .systemSmall) {
-    SolianNotificationWidget()
+    DynamicNotificationWidget()
 } timeline: {
     NotificationEntry(
         date: .now,
@@ -798,7 +798,7 @@ struct SolianNotificationWidget: Widget {
 }
 
 #Preview(as: .systemMedium) {
-    SolianNotificationWidget()
+    DynamicNotificationWidget()
 } timeline: {
     NotificationEntry(
         date: .now,
@@ -854,7 +854,7 @@ struct SolianNotificationWidget: Widget {
 
 #if os(iOS)
 #Preview(as: .systemLarge) {
-    SolianNotificationWidget()
+    DynamicNotificationWidget()
 } timeline: {
     NotificationEntry(
         date: .now,
@@ -909,7 +909,7 @@ struct SolianNotificationWidget: Widget {
 }
 
 #Preview(as: .accessoryCircular) {
-    SolianNotificationWidget()
+    DynamicNotificationWidget()
 } timeline: {
     NotificationEntry(
         date: .now,

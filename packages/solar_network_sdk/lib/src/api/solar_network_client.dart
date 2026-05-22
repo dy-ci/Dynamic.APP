@@ -1,4 +1,4 @@
-import 'package:dio/dio.dart';
+﻿import 'package:dio/dio.dart';
 import 'package:solar_network_sdk/src/api/domains/padlock_api.dart';
 
 import 'domains/auth_api.dart';
@@ -19,7 +19,7 @@ import 'domains/payments_api.dart';
 import 'domains/realms_api.dart';
 import 'domains/fitness_api.dart';
 
-/// Main client for interacting with the Solar Network API.
+/// Main client for interacting with the Dynamic Network API.
 ///
 /// Provides typed API methods organized by domain, with access to the
 /// underlying Dio instance for custom calls.

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
@@ -46,7 +46,7 @@
   <key>NSBluetoothPeripheralUsageDescription</key>
   <string>Bluetooth is used to exchange nearby meet identifiers.</string>
 	<key>NSCameraUsageDescription</key>
-	<string>Allow Solian to use your camera for Solar Network video call.</string>
+	<string>Allow Dynamic to use your camera for Dynamic Network video call.</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>$(PRODUCT_COPYRIGHT)</string>
 	<key>NSLocationUsageDescription</key>
@@ -54,7 +54,7 @@
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>Allow Solian to use your microphone for Solar Network audio call.</string>
+	<string>Allow Dynamic to use your microphone for Dynamic Network audio call.</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 	<key>NSSupportsAutomaticTermination</key>

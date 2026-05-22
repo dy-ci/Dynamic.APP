@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
@@ -56,7 +56,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NFCReaderUsageDescription</key>
-	<string>Solian uses NFC to register and manage physical NFC tags for your account.</string>
+	<string>Dynamic uses NFC to register and manage physical NFC tags for your account.</string>
 	<key>NSAppIntentsConfiguration</key>
 	<dict>
 		<key>NSAppIntentsPackage</key>
@@ -76,22 +76,22 @@
 	<key>NSCalendarsUsageDescription</key>
 	<string>Grant access to Calander help us to shows Solar Calander with your own events.</string>
 	<key>NSCameraUsageDescription</key>
-	<string>Grant access to Camera will allow Solian take photo or video for your post.</string>
+	<string>Grant access to Camera will allow Dynamic take photo or video for your post.</string>
 	<key>NSFaceIDUsageDescription</key>
-	<string>Allow the Solar Network verify your ownership of the logged in account and continue
+	<string>Allow the Dynamic Network verify your ownership of the logged in account and continue
 			your action quickly.</string>
 	<key>NSHealthShareUsageDescription</key>
-	<string>Allow Solian read Apple Health&apos;s data to share with your friends.</string>
+	<string>Allow Dynamic read Apple Health&apos;s data to share with your friends.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Location is used to fill in meet places from your current position.</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>Grant access to Microphone will allow Solian record audio for your post.</string>
+	<string>Grant access to Microphone will allow Dynamic record audio for your post.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Grant access to Photo Library will allow Solian download photo to album for you.</string>
+	<string>Grant access to Photo Library will allow Dynamic download photo to album for you.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Grant access to Photo Library will allow Solian upload photo or video for your post.</string>
+	<string>Grant access to Photo Library will allow Dynamic upload photo or video for your post.</string>
 	<key>NSSpeechRecognitionUsageDescription</key>
-	<string>Solian uses speech recognition for Siri integration</string>
+	<string>Dynamic uses speech recognition for Siri integration</string>
 	<key>NSUserActivityTypes</key>
 	<array>
 		<string>INStartCallIntent</string>
@@ -157,6 +157,6 @@
 	<key>NSHealthClinicalHealthRecordsShareUsageDescription</key>
 	<string>This app does not uses Health Record data directly, but a dependency may reference HealthKit APIs.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Solian uses your location data to provide the location pin feature that sharing your current location with your selected friends.</string>
+	<string>Dynamic uses your location data to provide the location pin feature that sharing your current location with your selected friends.</string>
 </dict>
 </plist>
