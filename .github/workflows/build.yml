@@ -79,7 +79,7 @@ jobs:
       - name: Build Windows Release
         if: matrix.platform == 'windows'
         run: |
-          mkdir -p C:\Users\runneradmin\AppData\Local
+          if (!(Test-Path "C:\Users\runneradmin\AppData\Local")) { mkdir "C:\Users\runneradmin\AppData\Local" }
           flutter build windows --release
 
       - name: Build Linux Release
