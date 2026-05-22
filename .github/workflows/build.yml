@@ -129,7 +129,9 @@ jobs:
           fi
           if [ -n "$found_exe" ]; then
             echo "found_exe=$found_exe" >> $GITHUB_OUTPUT
-            cp "$found_exe" Installer/dynamic-windows-x64-setup.exe
+            if [ "$found_exe" != "Installer/dynamic-windows-x64-setup.exe" ]; then
+              cp "$found_exe" Installer/dynamic-windows-x64-setup.exe
+            fi
           else
             echo "found_exe=" >> $GITHUB_OUTPUT
             echo "::warning::No Windows installer executable found."
