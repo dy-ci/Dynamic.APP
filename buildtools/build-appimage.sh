@@ -1,4 +1,4 @@
-﻿rm -rf Dynamic.AppDir
+rm -rf Dynamic.AppDir
 mkdir Dynamic.AppDir
 cp -r build/linux/x64/release/bundle/* Dynamic.AppDir
 cp -r buildtools/appimage_config/* Dynamic.AppDir

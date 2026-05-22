@@ -1,4 +1,4 @@
-﻿# Code of Conduct
+# Code of Conduct
 
 Welcome to the Dynamic Network / HyperNet project!
 

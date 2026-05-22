@@ -1,4 +1,4 @@
-﻿//
+//
 //  AppInfoHeader.swift
 //  Runner
 //

@@ -1,4 +1,4 @@
-﻿# @solarnetwork/js-auth
+# @solarnetwork/js-auth
 
 > Dynamic Network Web Authentication Client for JavaScript/TypeScript
 

@@ -1,4 +1,4 @@
-﻿# Dynamic (Dynamic Network)
+# Dynamic (Dynamic Network)
 
 <p align="center">
   <img src="assets/icons/icon.webp" width="120" alt="Dynamic Logo">

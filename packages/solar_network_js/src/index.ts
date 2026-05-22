@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Dynamic Network Web Authentication Client
  * 
  * This module provides a JavaScript/TypeScript client for authenticating

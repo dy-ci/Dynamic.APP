@@ -1,4 +1,4 @@
-﻿//
+//
 //  ShareViewController.swift
 //  DynamicShareExtension
 //

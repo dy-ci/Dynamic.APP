@@ -1,4 +1,4 @@
-﻿#include "my_application.h"
+#include "my_application.h"
 
 #include <cstdlib>
 

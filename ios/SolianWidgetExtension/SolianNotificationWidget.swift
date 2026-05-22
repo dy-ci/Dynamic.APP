@@ -1,4 +1,4 @@
-﻿//
+//
 //  DynamicNotificationWidget.swift
 //  Runner
 //

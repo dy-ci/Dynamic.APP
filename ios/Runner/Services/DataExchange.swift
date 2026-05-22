@@ -1,4 +1,4 @@
-﻿//
+//
 //  DataExchange.swift
 //  Runner
 //

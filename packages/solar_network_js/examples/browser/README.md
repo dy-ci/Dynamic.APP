@@ -1,4 +1,4 @@
-﻿# Dynamic Network JS Auth Example
+# Dynamic Network JS Auth Example
 
 This is an example web application demonstrating how to use `@solarnetwork/js-auth`.
 

@@ -1,4 +1,4 @@
-﻿# Dynamic Network SDK
+# Dynamic Network SDK
 
 A Flutter SDK for interacting with the Dynamic Network API.
 

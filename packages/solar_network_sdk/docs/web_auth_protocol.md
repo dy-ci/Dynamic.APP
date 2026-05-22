@@ -1,4 +1,4 @@
-﻿# Web Auth Protocol (dynamic://auth/web)
+# Web Auth Protocol (dynamic://auth/web)
 
 This document describes the native APP_CONNECT-compatible web auth trigger
 handled by Dynamic via deep link protocol:

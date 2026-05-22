@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Dynamic Network Web Authentication Client
  * 
  * This client enables JavaScript/TypeScript applications to authenticate

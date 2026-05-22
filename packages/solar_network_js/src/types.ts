@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Type definitions for Dynamic Network Web Authentication Client
  */
 

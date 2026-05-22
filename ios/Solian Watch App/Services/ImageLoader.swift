@@ -1,4 +1,4 @@
-﻿//
+//
 //  ImageLoader.swift
 //  WatchRunner Watch App
 //

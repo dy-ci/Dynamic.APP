@@ -1,4 +1,4 @@
-﻿import 'dart:async';
+import 'dart:async';
 import 'dart:math';
 
 import 'package:bluetooth_low_energy/bluetooth_low_energy.dart' as ble;

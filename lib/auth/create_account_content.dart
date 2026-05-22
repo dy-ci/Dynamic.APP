@@ -1,4 +1,4 @@
-﻿import 'dart:convert';
+import 'dart:convert';
 
 import 'package:animations/animations.dart';
 import 'package:auto_route/auto_route.dart';

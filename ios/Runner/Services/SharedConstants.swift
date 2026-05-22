@@ -1,4 +1,4 @@
-﻿//
+//
 //  SharedConstants.swift
 //  Runner
 //

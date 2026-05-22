@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:island/shared/widgets/layouts/sheet_scaffold.dart';
 import 'package:styled_widget/styled_widget.dart';

@@ -1,4 +1,4 @@
-﻿import 'package:event_bus/event_bus.dart';
+import 'package:event_bus/event_bus.dart';
 import 'package:solar_network_sdk/solar_network_sdk.dart';
 
 /// Global event bus instance for the application

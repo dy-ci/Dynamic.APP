@@ -1,4 +1,4 @@
-﻿//
+//
 //  NetworkService.swift
 //  WatchRunner Watch App
 //

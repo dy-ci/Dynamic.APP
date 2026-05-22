@@ -1,4 +1,4 @@
-﻿//
+//
 //  DynamicWidgetExtension.swift
 //  DynamicWidgetExtension
 //

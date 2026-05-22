@@ -1,4 +1,4 @@
-﻿//
+//
 //  DynamicPostShuffleWidget.swift
 //  DynamicWidgetExtension
 //

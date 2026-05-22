@@ -1,4 +1,4 @@
-﻿import 'package:dio/dio.dart';
+import 'package:dio/dio.dart';
 import 'package:solar_network_sdk/src/api/domains/padlock_api.dart';
 
 import 'domains/auth_api.dart';
