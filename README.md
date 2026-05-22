@@ -22,7 +22,7 @@ Note: Fediverse support is currently experimental and limited.
 
 > **Help us translate!** Click the Crowdin badge above to contribute translations.
 >
-> If you read Chinese, visit our documentation: [Suki - Dynamic Network](https://kb.solsynth.dev/zh/solar-network) | [中文 README](./README_CN.md)
+> If you read Chinese, visit our documentation: [Suki - Dynamic Network](https://kb.zhaishis.com/zh/solar-network) | [中文 README](./README_CN.md)
 
 ---
 
@@ -127,8 +127,8 @@ This repository is organized as a monorepo containing useful Dart packages under
 
 Want to build with Dynamic Network? Check out:
 
-- [Documentation](https://kb.solsynth.dev)
-- [API Reference](https://api.solsynth.dev)
+- [Documentation](https://kb.zhaishis.com)
+- [API Reference](https://api.zhaishis.com)
 - [`packages/solar_network_sdk`](./packages/solar_network_sdk) - Official Dart SDK
 
 ---

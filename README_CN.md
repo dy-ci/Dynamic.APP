@@ -24,7 +24,7 @@ Dynamic（又名 Dynamic Network）是一个社交平台，旨在帮助你自由
 
 > **帮助我们翻译！** 点击上方的 Crowdin 徽章参与翻译贡献。
 >
-> 中文文档：[Suki - Dynamic Network](https://kb.solsynth.dev/zh/solar-network) | [English README](./README.md)
+> 中文文档：[Suki - Dynamic Network](https://kb.zhaishis.com/zh/solar-network) | [English README](./README.md)
 
 ---
 
@@ -129,8 +129,8 @@ flutter build <platform>
 
 想要基于 Dynamic Network 进行开发？查看以下资源：
 
-- [开发文档](https://kb.solsynth.dev)
-- [API 文档](https://api.solsynth.dev)
+- [开发文档](https://kb.zhaishis.com)
+- [API 文档](https://api.zhaishis.com)
 - [`packages/solar_network_sdk`](./packages/solar_network_sdk) - 官方 Dart SDK
 
 ---

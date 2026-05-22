@@ -1,4 +1,4 @@
-import 'dart:async';
+﻿import 'dart:async';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
@@ -676,7 +676,7 @@ class StellarProgramTab extends HookConsumerWidget {
                 const Gap(8),
                 InkWell(
                   onTap: () => launchUrlString(
-                    'https://solsynth.dev/terms/user-agreement',
+                    'https://zhaishis.com/terms/user-agreement',
                     mode: LaunchMode.externalApplication,
                   ),
                   borderRadius: BorderRadius.circular(999),

@@ -2510,7 +2510,7 @@ class _MeetDiscoverySection extends HookConsumerWidget {
                       urlTemplate:
                           'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
                       userAgentPackageName:
-                          'Dynamic/1.0 (+https://dy.ci, contact: lily@solsynth.dev)',
+                          'Dynamic/1.0 (+https://dy.ci, contact: sn@dy.ci)',
                     ),
                     RichAttributionWidget(
                       attributions: [
@@ -3488,7 +3488,7 @@ class _MeetLocationMapCard extends StatelessWidget {
                   retinaMode: true,
                   urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
                   userAgentPackageName:
-                      'Dynamic/1.0 (+https://dy.ci, contact: lily@solsynth.dev)',
+                      'Dynamic/1.0 (+https://dy.ci, contact: sn@dy.ci)',
                 ),
                 RichAttributionWidget(
                   attributions: [
@@ -3789,7 +3789,7 @@ class _MeetPinsMapCard extends StatelessWidget {
               retinaMode: true,
               urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
               userAgentPackageName:
-                  'Dynamic/1.0 (+https://dy.ci, contact: lily@solsynth.dev)',
+                  'Dynamic/1.0 (+https://dy.ci, contact: sn@dy.ci)',
             ),
             RichAttributionWidget(
               attributions: [

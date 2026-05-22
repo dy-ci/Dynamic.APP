@@ -1118,7 +1118,7 @@ class _LoginLookupScreen extends HookConsumerWidget {
                         ],
                       ),
                       onTap: () {
-                        launchUrlString('https://solsynth.dev/terms');
+                        launchUrlString('https://zhaishis.com/terms');
                       },
                     ),
                   ),

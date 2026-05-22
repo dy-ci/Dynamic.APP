@@ -1,4 +1,4 @@
-import 'dart:async';
+﻿import 'dart:async';
 import 'dart:io';
 
 import 'package:archive/archive.dart';
@@ -284,17 +284,17 @@ class UpdateService {
 
     // Prioritize arm64, then armeabi, then x86_64
     if (arm64 != null) {
-      return 'https://fs.solsynth.dev/d/public/r2/solian/${arm64.name}';
+      return 'https://fs.zhaishis.com/d/public/r2/solian/${arm64.name}';
     } else if (armeabi != null) {
-      return 'https://fs.solsynth.dev/d/public/r2/solian/${armeabi.name}';
+      return 'https://fs.zhaishis.com/d/public/r2/solian/${armeabi.name}';
     } else if (x86_64 != null) {
-      return 'https://fs.solsynth.dev/d/public/r2/solian/${x86_64.name}';
+      return 'https://fs.zhaishis.com/d/public/r2/solian/${x86_64.name}';
     }
     return null;
   }
 
   String _getWindowsUpdateUrl() {
-    return 'https://fs.solsynth.dev/d/public/r2/solian/build-output-windows-installer.zip';
+    return 'https://fs.zhaishis.com/d/public/r2/solian/build-output-windows-installer.zip';
   }
 
   bool _isAndroidUpdateApk(String fileName) {
@@ -337,7 +337,7 @@ class UpdateService {
 
     AzhonAppUpdate.dispose();
     final downloadUrl = useProxy
-        ? 'https://fs.solsynth.dev/d/rainyun02/solian/${Uri.encodeComponent(url.split('/').last)}'
+        ? 'https://fs.zhaishis.com/d/rainyun02/solian/${Uri.encodeComponent(url.split('/').last)}'
         : url;
     final model = UpdateModel(
       downloadUrl,
