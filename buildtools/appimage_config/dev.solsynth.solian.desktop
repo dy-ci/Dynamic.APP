@@ -13,6 +13,6 @@ StartupNotify=true
 StartupWMClass=island
 
 # Helps with search in application menus
-Keywords=solian;social;chat;messenger;community;network;dm;messages;solar network;
+Keywords=dynamic;social;chat;messenger;community;network;dm;messages;dynamic network;
 
-MimeType=x-scheme-handler/solian;
+MimeType=x-scheme-handler/dynamic;

@@ -10,7 +10,7 @@ AppName=Dynamic
 AppVersion={#AppVersion}
 AppPublisher=Dynamic Team
 AppPublisherURL=https://dynamic.team
-AppSupportURL=https://kb.zhaishis.com/zh/solar-network
+AppSupportURL=https://kb.zhaishis.com/zh/dynamic-network
 AppUpdatesURL=https://github.com/Solsynth/Dynamic/releases
 AppCopyright=Copyright © 2025 Dynamic Team
 VersionInfoVersion={#FullVersion}
@@ -21,7 +21,7 @@ DefaultDirName={commonpf}\Dynamic
 UsePreviousAppDir=no
 
 OutputDir=.\Installer
-OutputBaseFilename=windows-x86_64-setup
+OutputBaseFilename=dynamic-windows-x64-setup
 SetupIconFile=.\assets\icons\icon.ico  
 
 Compression=lzma2/ultra64
