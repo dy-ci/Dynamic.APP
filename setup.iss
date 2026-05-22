@@ -9,9 +9,9 @@
 AppName=Dynamic
 AppVersion={#AppVersion}
 AppPublisher=Dynamic Team
-AppPublisherURL=https://dynamic.team
+AppPublisherURL=https://dy.ci
 AppSupportURL=https://kb.zhaishis.com/zh/dynamic-network
-AppUpdatesURL=https://github.com/Solsynth/Dynamic/releases
+AppUpdatesURL=https://github.com/dy-ci/Dynamic.APP/releases
 AppCopyright=Copyright © 2025 Dynamic Team
 VersionInfoVersion={#FullVersion}
 UninstallDisplayName=Dynamic
