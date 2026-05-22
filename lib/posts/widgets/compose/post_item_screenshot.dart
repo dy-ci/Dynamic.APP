@@ -353,7 +353,7 @@ class PostItemScreenshot extends ConsumerWidget {
                   ),
                 ),
                 QrImageView(
-                  data: 'https://solian.app/posts/${item.id}',
+                  data: 'https://dy.ci/posts/${item.id}',
                   version: QrVersions.auto,
                   size: 60,
                   errorCorrectionLevel: QrErrorCorrectLevel.M,

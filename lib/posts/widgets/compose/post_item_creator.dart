@@ -1,4 +1,4 @@
-import 'package:auto_route/auto_route.dart';
+﻿import 'package:auto_route/auto_route.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -100,7 +100,7 @@ class PostItemCreator extends HookConsumerWidget {
               image: MenuImage.icon(Symbols.link),
               callback: () {
                 Clipboard.setData(
-                  ClipboardData(text: 'https://solian.app/posts/${item.id}'),
+                  ClipboardData(text: 'https://dy.ci/posts/${item.id}'),
                 );
               },
             ),

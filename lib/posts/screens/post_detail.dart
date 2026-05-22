@@ -1,4 +1,4 @@
-import 'package:easy_localization/easy_localization.dart';
+﻿import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/foundation.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:dio/dio.dart';
@@ -334,7 +334,7 @@ class PostActionButtons extends HookConsumerWidget {
         onPressed: () {
           showShareSheetLink(
             context: context,
-            link: 'https://solian.app/posts/${post.id}',
+            link: 'https://dy.ci/posts/${post.id}',
             title: 'sharePost'.tr(),
             toSystem: true,
           );
@@ -1410,7 +1410,7 @@ class _PostDetailLargeScreenLayout extends HookConsumerWidget {
         case 'copyLink':
           return () {
             Clipboard.setData(
-              ClipboardData(text: 'https://solian.app/posts/${post.id}'),
+              ClipboardData(text: 'https://dy.ci/posts/${post.id}'),
             );
           };
         case 'reply':
@@ -1490,7 +1490,7 @@ class _PostDetailLargeScreenLayout extends HookConsumerWidget {
           return () {
             showShareSheetLink(
               context: context,
-              link: 'https://solian.app/posts/${post.id}',
+              link: 'https://dy.ci/posts/${post.id}',
               title: 'sharePost'.tr(),
               toSystem: true,
             );
@@ -1924,7 +1924,7 @@ class PostDetailScreen extends HookConsumerWidget {
                 return () {
                   Clipboard.setData(
                     ClipboardData(
-                      text: 'https://solian.app/posts/${postItem.id}',
+                      text: 'https://dy.ci/posts/${postItem.id}',
                     ),
                   );
                 };
@@ -2014,7 +2014,7 @@ class PostDetailScreen extends HookConsumerWidget {
                 return () {
                   showShareSheetLink(
                     context: context,
-                    link: 'https://solian.app/posts/${postItem.id}',
+                    link: 'https://dy.ci/posts/${postItem.id}',
                     title: 'sharePost'.tr(),
                     toSystem: true,
                   );

@@ -72,7 +72,7 @@ class WidgetNetworkService {
     }
     
     var baseURL: String {
-        return userDefaults?.string(forKey: urlKey) ?? "https://api.solian.app"
+        return userDefaults?.string(forKey: urlKey) ?? "https://api.dy.ci"
     }
     
     func makeRequest<T: Codable>(

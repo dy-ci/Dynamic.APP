@@ -1,4 +1,4 @@
-{
+﻿{
   "login": "登录",
   "loginDescription": "已有用户？我们欢迎您回来！",
   "forgotPassword": "忘记密码",
@@ -3159,7 +3159,7 @@
   "settingsIpOverrideModeMixed": "混合覆盖",
   "settingsIpOverrideModeOff": "关闭",
   "settingsIpOverrideDomains": "混合模式域名",
-  "settingsIpOverrideDomainsHelper": "每行输入一个域名。使用精确主机名或后缀，如 `.solian.app`。",
+  "settingsIpOverrideDomainsHelper": "每行输入一个域名。使用精确主机名或后缀，如 `.dy.ci`。",
   "settingsIpOverrideDomainsSaved": "覆盖域名已保存。",
   "settingsIpOverrideEntries": "IP 覆盖条目",
   "settingsIpOverrideEntriesHelper": "每行输入一个覆盖。使用 `IP` 或 `IP:PORT`。",

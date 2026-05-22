@@ -1,4 +1,4 @@
-import 'dart:async';
+﻿import 'dart:async';
 
 import 'package:dio/dio.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -176,7 +176,7 @@ class _AccountBasicInfo extends HookWidget {
                           ),
                           child: IconButton(
                             onPressed: () {
-                              SharePlus.instance.share(ShareParams(uri: Uri.parse('https://solian.app/@${data.name}')));
+                              SharePlus.instance.share(ShareParams(uri: Uri.parse('https://dy.ci/@${data.name}')));
                             },
                             icon: Icon(Symbols.share, color: theme.colorScheme.primary),
                           ),

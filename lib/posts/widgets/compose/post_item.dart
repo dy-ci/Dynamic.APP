@@ -1,4 +1,4 @@
-import 'package:auto_route/auto_route.dart';
+﻿import 'package:auto_route/auto_route.dart';
 import 'package:easy_localization/easy_localization.dart' hide TextDirection;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -120,7 +120,7 @@ class PostActionableItem extends HookConsumerWidget {
         case 'copyLink':
           return () {
             Clipboard.setData(
-              ClipboardData(text: 'https://solian.app/posts/${item.id}'),
+              ClipboardData(text: 'https://dy.ci/posts/${item.id}'),
             );
           };
         case 'reply':
@@ -230,7 +230,7 @@ class PostActionableItem extends HookConsumerWidget {
           return () {
             showShareSheetLink(
               context: context,
-              link: 'https://solian.app/posts/${item.id}',
+              link: 'https://dy.ci/posts/${item.id}',
               title: 'sharePost'.tr(),
               toSystem: true,
             );

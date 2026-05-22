@@ -1,4 +1,4 @@
-//
+﻿//
 //  SharedConstants.swift
 //  Runner
 //
@@ -12,7 +12,7 @@ enum SharedConstants {
     static let urlScheme = "solian"
     static let serverUrlKey = "flutter.app_server_url"
     static let tokenKey = "flutter.dyn_user_tk"
-    static let defaultServerUrl = "https://api.solian.app"
+    static let defaultServerUrl = "https://api.dy.ci"
 
     enum API {
         static let notificationsCount = "/ring/notifications/count"

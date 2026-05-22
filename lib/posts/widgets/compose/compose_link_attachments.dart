@@ -1,4 +1,4 @@
-import 'package:easy_localization/easy_localization.dart';
+﻿import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -386,7 +386,7 @@ class _ManualCloudFileLinkForm extends ConsumerWidget {
           InkWell(
             child: Text('fileIdLinkHint').tr().fontSize(13).opacity(0.85),
             onTap: () {
-              launchUrlString('https://fs.solian.app');
+              launchUrlString('https://fs.dy.ci');
             },
           ).padding(horizontal: 14),
           const Gap(16),

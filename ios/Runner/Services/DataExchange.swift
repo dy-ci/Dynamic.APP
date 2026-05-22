@@ -1,4 +1,4 @@
-//
+﻿//
 //  DataExchange.swift
 //  Runner
 //
@@ -47,7 +47,7 @@ extension UserDefaults {
     }
     
     func getServerUrl(forKey key: String = "app_server_url") -> String {
-        return self.getFlutterValue(forKey: key) ?? "https://api.solian.app"
+        return self.getFlutterValue(forKey: key) ?? "https://api.dy.ci"
     }
 
     private func getStoredTokenPair(forKey key: String) -> StoredTokenPair? {

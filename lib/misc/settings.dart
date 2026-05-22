@@ -1,4 +1,4 @@
-import 'dart:io';
+﻿import 'dart:io';
 
 import 'package:collection/collection.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
@@ -2748,7 +2748,7 @@ void _showIpOverrideDomainsEditor(BuildContext context, WidgetRef ref) {
                   textAlignVertical: TextAlignVertical.top,
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
-                    hintText: 'io.solian.app\nmedia.solian.app',
+                    hintText: 'io.dy.ci\nmedia.dy.ci',
                     alignLabelWithHint: true,
                   ),
                 ),

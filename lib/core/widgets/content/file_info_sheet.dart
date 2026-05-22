@@ -1,4 +1,4 @@
-import 'dart:convert';
+﻿import 'dart:convert';
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -140,11 +140,11 @@ class FileInfoSheet extends ConsumerWidget {
               ListTile(
                 leading: const Icon(Symbols.launch),
                 title: Text('openInBrowser').tr(),
-                subtitle: Text('https://solian.app/files/${item.id}'),
+                subtitle: Text('https://dy.ci/files/${item.id}'),
                 contentPadding: const EdgeInsets.symmetric(horizontal: 12),
                 onTap: () {
                   launchUrlString(
-                    'https://solian.app/files/${item.id}',
+                    'https://dy.ci/files/${item.id}',
                     mode: LaunchMode.externalApplication,
                   );
                 },

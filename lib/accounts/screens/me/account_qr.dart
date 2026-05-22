@@ -33,7 +33,7 @@ class AccountQrScreen extends HookConsumerWidget {
     }
 
     final account = user.value!;
-    final profileUrl = 'https://solian.app/accounts/${account.name}';
+    final profileUrl = 'https://dy.ci/accounts/${account.name}';
 
     Future<void> copyProfileUrl() async {
       await Clipboard.setData(ClipboardData(text: profileUrl));
@@ -358,7 +358,7 @@ String? _resolveScannedAccountName(String rawValue) {
   if (uri != null) {
     final segments = uri.pathSegments;
     final isDynamicHost =
-        uri.host == 'solian.app' || uri.host.endsWith('.solian.app');
+        uri.host == 'dy.ci' || uri.host.endsWith('.dy.ci');
     if (isDynamicHost && segments.length >= 2 && segments.first == 'accounts') {
       final name = segments[1].trim();
       return name.isEmpty ? null : name;
